@@ -1,0 +1,521 @@
+@charset "UTF-8";
+
+/* 공통 */
+section{height: 100vh; overflow: hidden;}
+.mainBorderText{padding: 3px; display: inline-block; font-size: 14px; color: #444; text-transform: uppercase; border: 1px solid #54636f; border-width: 1px 0; letter-spacing: 3px; overflow: hidden; word-break: keep-all;}
+
+/* 비주얼영역 */
+#section01{position: relative;}
+#section01 video{display: block; width: 100%;height: 100%; object-fit: cover;}
+#section01 .titleBox{width: 100%; position: absolute; top:236px; left:0; word-break: keep-all;}
+#section01 .titleBox .box{overflow: hidden;}
+#section01 .titleBox .box01{margin-bottom: 25px; }
+#section01 .titleBox .box02{margin-bottom: 27px; }
+#section01 .titleBox h3{font-size: 72px; text-transform: uppercase; line-height: 1.1; letter-spacing: -3px; overflow: hidden;}
+#section01 .titleBox h3 strong{display: block; color: #314965; }
+#section01 .titleBox p{font-size: 18px; color: #444; font-weight: 500; letter-spacing: -1px; overflow: hidden;}
+#section01 .infoTextBox{padding: 140px 20px 0; position: absolute; top:0; left:-100%; bottom: 0; max-width: 800px; width: 100%; text-align: center; background: url(../images/main/bg01.jpg)no-repeat center / cover; z-index: 999;}
+#section01 .infoTextBox .title{margin-bottom: 50px; font-size: 48px; color: #202020; line-height: 1.2; text-align: center; letter-spacing: -3px;}
+#section01 .infoTextBox .title span{font-weight: 700;}
+#section01 .infoTextBox .title strong{font-size: 60px;}
+#section01 .infoTextBox .text{margin-bottom: 40px; color: #666; font-weight: 500; letter-spacing: -1px;}
+#section01 .infoTextBox .logoBox img{display: block; margin: 0 auto;}
+
+.fadeUp{opacity: 0;transform: translateY(60px); animation: fadeUp .7s ease-in-out forwards;}
+.fadeUp.delay01 {animation-delay: 0s;}
+.fadeUp.delay02 {animation-delay: .3s;}
+.fadeUp.delay03 {animation-delay: .6s;}
+
+@keyframes fadeUp {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 1199px){
+
+  #section01 .titleBox{top: 50%; transform: translateY(-50%);}
+  #section01 .titleBox h3{font-size: 60px;}
+  #section01 .infoTextBox{padding: 50px 20px; max-width: none; position: static;}
+
+  #section01 .infoTextBox .title strong,
+  #section01 .infoTextBox .title{font-size: 40px;}
+
+
+}
+
+@media (max-width: 767px){
+
+  #section01 .titleBox h3{font-size: 50px;}
+  #section01 .titleBox p{font-size: 16px;}
+
+  #section01 .infoTextBox .title strong,
+  #section01 .infoTextBox .title{font-size: 36px;}
+
+}
+
+@media (max-width: 480px){
+
+  #section01 .titleBox h3{font-size: 36px;}
+  #section01 .titleBox p{font-size: 16px;}
+  #section01 .titleBox p br{display: none;}
+  #section01 .titleBox{text-align: center;}
+
+  #section01 .infoTextBox .title{margin-bottom: 35px;}
+  #section01 .infoTextBox .title strong,
+  #section01 .infoTextBox .title{font-size: 28px;}
+
+}
+
+/* section02 */
+#section02{ position: relative; overflow: hidden;}
+#section02::after{content: ''; position: absolute; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.3);}
+#section02 .box{overflow: hidden;}
+#section02 video{display: block; width: 100%; height: 100%; object-fit: cover;}
+#section02 .titleBox{width: 100%; position: absolute; top:50%; transform: translateY(-50%); left:0; z-index: 999;}
+#section02 .titleBox .mainBorderText{margin-bottom: 20px; color: #fff; border-color: #fff;}
+#section02 .titleBox .text{font-size: 70px; color: #fff; line-height: 1.1; text-transform: uppercase; font-weight: 700; word-break: keep-all;}
+#section02 .titleBox .text span{font-size: 60px;}
+
+@media (max-width: 1199px){
+
+  #section02 .titleBox .text{font-size: 60px;}
+
+}
+
+@media (max-width: 767px){
+
+  #section02 .titleBox .text span,
+  #section02 .titleBox .text{font-size: 50px;}
+
+}
+
+@media (max-width: 480px){
+
+  #section02 .titleBox{text-align: center;}
+  #section02 .titleBox .text span,
+  #section02 .titleBox .text{font-size: 30px;}
+
+
+}
+
+/* section03 */
+#section03 .scrollWrap{display: flex; width: 200vw;}
+#section03 .scrollWrap .scrollBox{width: 100vw; overflow: hidden;}
+#section03 .infoBox{ background: url(../images/main/bg02.jpg)no-repeat center / cover}
+#section03 .infoBox .layoutBox{position: relative; height: 100vh; display: flex; align-items: center; justify-content: center; gap: 0 114px;}
+#section03 .infoBox .layoutBox::after{content: ''; width: 23px; height: 23px; position: absolute; top: 50%; border-radius: 3px;}
+#section03 .scrollBox01 .infoBox .layoutBox::after{right: 0; transform: translateY(-50%) rotate(45deg); border-top: 2px solid #515151;
+  border-right: 2px solid #515151; }
+#section03 .infoBox .imgWrap{display: flex; gap: 8px;}
+#section03 .infoBox .imgBox01{display: flex; flex-direction: column; align-items: flex-end; gap: 8px;}
+#section03 .infoBox .imgBox02{display: flex; flex-direction: column; align-items: flex-start; gap: 8px}
+#section03 .infoBox .imgBox img{display: block; max-width: 100%;}
+#section03 .infoBox .imgBox .box02{display: flex; align-items: flex-start; gap: 8px;}
+#section03 .infoBox .imgBox .box01{display: flex; align-items: flex-end; gap: 8px;}
+#section03 .infoBox .imgBox .box01 img,
+#section03 .infoBox .imgBox .box02 img{ width: calc(50% - 4px);}
+#section03 .infoBox .textWrap{text-align: center;}
+#section03 .infoBox .textWrap .mainBorderText{margin-bottom: 50px;}
+#section03 .infoBox .textWrap .topTitle{margin-bottom: 40px; font-size: 50px; color: #000; font-family: 'OoohBaby';}
+#section03 .infoBox .textWrap .title{margin-bottom: 50px; font-size: 44px; color: #202020; line-height: 1.2; letter-spacing: -2px;}
+#section03 .infoBox .textWrap .title strong{display: block; font-size: 54px;}
+#section03 .infoBox .textWrap .text{color: #666; font-weight: 500; text-align: center;}
+#section03 .scrollBox02 .infoBox .layoutBox::after{left: 0; transform: translateY(-50%) rotate(45deg);  border-left: 2px solid #515151;
+  border-bottom: 2px solid #515151;}
+#section03 .scrollBox02 .infoBox .imgWrap{align-items: center;}
+
+@media (max-width: 1440px){
+
+  #section03{padding: 150px 0 100px; background: url(../images/main/bg02.jpg) no-repeat center / cover;}
+  #section03 .infoBox{background: none;}
+  #section03 .infoBox .layoutBox,
+  #section03{height: auto;}
+  #section03 .scrollWrap .scrollBox01{margin-bottom: 120px;}
+  #section03 .scrollWrap .scrollBox{width: 100%;}
+  #section03 .infoBox .layoutBox{flex-direction: column; gap: 100px 0;}
+  #section03 .scrollBox01 .infoBox .layoutBox{ flex-direction: column-reverse; }
+  #section03 .scrollWrap{display: block; width: 100%;}
+  #section03 .infoBox .layoutBox::after,
+  #section03 .infoBox .layoutBox::before{display: none;}
+
+}
+
+@media (max-width: 1199px){
+
+  #section03 .scrollWrap .scrollBox01{margin-bottom: 90px;}
+  #section03 .infoBox .layoutBox{padding: 0; gap: 70px 0;}
+  #section03 .infoBox .textWrap .topTitle{font-size: 36px;}
+  #section03 .infoBox .textWrap .title strong,
+  #section03 .infoBox .textWrap .title{font-size: 36px;}
+
+}
+
+@media (max-width: 1024px){
+
+  #section03 .infoBox .imgWrap{flex-direction: column;}
+
+}
+
+@media (max-width: 767px){
+
+  #section03{padding: 100px 0;}
+  #section03 .infoBox .layoutBox{gap: 60px 0;}
+  #section03 .infoBox .textWrap .topTitle{margin-bottom: 15px;}
+  #section03 .infoBox .textWrap .mainBorderText,
+  #section03 .infoBox .textWrap .title{margin-bottom: 30px;}
+  #section03 .infoBox .textWrap .topTitle{font-size: 30px;}
+  #section03 .infoBox .textWrap .title strong,
+  #section03 .infoBox .textWrap .title{font-size: 30px;}
+
+}
+
+@media (max-width: 480px){
+  
+  #section03{padding: 80px 0;}
+  #section03 .scrollWrap .scrollBox01{margin-bottom: 50px;}
+  #section03 .infoBox .layoutBox{gap: 40px 0}
+  #section03 .infoBox .textWrap .topTitle{font-size: 22px;}
+  #section03 .infoBox .textWrap .title strong,
+  #section03 .infoBox .textWrap .title{font-size: 22px;}
+  #section03 .infoBox .textWrap .text br{display: none;}
+
+}
+
+/* section04 */
+#section04{display: flex;}
+#section04 .mapBox{flex-shrink: 0; width: 60%;}
+#section04 .mapBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#section04 .textBox{width: 40%; display: flex; flex-direction: column; align-items: center; justify-content: center; background: url(../images/main/bg03.jpg)no-repeat center / cover; overflow: hidden;}
+#section04 .textBox .topTextBox{margin-bottom: 50px; text-align: center;}
+#section04 .textBox .topTextBox .mainBorderText{margin-bottom: 25px; color: #fff;}
+#section04 .textBox .topTextBox .title{margin-bottom: 35px; font-size: 42px; color: #fff; line-height: 1.2;}
+#section04 .textBox .topTextBox .title strong{font-size: 48px;}
+#section04 .textBox .topTextBox .text{font-weight: 500; color: #fff;}
+#section04 .textBox .imgSlideBox{margin: 0 auto; max-width: 491px;}
+#section04 .textBox .imgSlideBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+#section04 .textBox .infoBox{margin-top: 36px; display: flex; align-items: center; justify-content: center; gap: 0 40px;}
+#section04 .textBox .infoBox .infoLeftBox{flex-shrink: 0; line-height: 1.2; text-align: center;}
+#section04 .textBox .infoBox .infoLeftBox span{display: block; font-size: 54px; font-weight: 700; color: #faca8f;}
+#section04 .textBox .infoBox .infoLeftBox strong{display: block; font-size: 28px; color: #faca8f;}
+#section04 .textBox .infoBox .infoRightBox .infoList li{position: relative; padding-left: 12px; font-size: 14px; font-weight: 500; color: #fff;}
+#section04 .textBox .infoBox .infoRightBox .infoList li::before{content: ''; position: absolute; top:9px; left:0; width: 3px; height: 3px; border-radius: 50%; background-color: #fff;}
+#section04 .textBox .slickWrap{position: relative; width: 100%;}
+#section04 .control button{ position: absolute; top: 30%; transform: translateY(-50%);}
+#section04 .control button.prev{left:86px;}
+#section04 .control button.prev::after{content: ''; left: 0; transform: translateY(-50%) rotate(45deg);  border-left: 2px solid #fff;
+  border-bottom: 2px solid #fff;;}
+#section04 .control button.next::after{content: ''; right: 0; transform: translateY(-50%) rotate(45deg); border-top: 2px solid #fff;
+  border-right: 2px solid #fff;}
+#section04 .control button.next{right:86px;}
+#section04 .control button::after{content: ''; width: 23px; height: 23px; position: absolute; top: 50%; border-radius: 3px;}
+
+@media (max-width: 1440px){
+
+  #section04{flex-direction: column; height: auto;}
+  #section04 .mapBox{position: relative; height: 0; padding-top: 70%;}
+  #section04 .mapBox img{position: absolute; top:0; left:0; right:0; bottom: 0;}
+  #section04 .mapBox,
+  #section04 .textBox{width: 100%;}
+  #section04 .textBox{padding: 130px 20px 100px;}
+
+}
+
+@media (max-width: 1199px){
+
+  #section04 .mapBox{padding-top: 50%;}
+  #section04 .textBox .topTextBox .title,
+  #section04 .textBox .topTextBox .title strong{font-size: 36px;}
+  #section04 .textBox .infoBox .infoLeftBox span{font-size: 40px;}
+
+}
+
+@media (max-width: 767px){
+
+  #section04 .textBox{padding: 100px 20px;}
+  #section04 .textBox .topTextBox .title,
+  #section04 .textBox .topTextBox .title strong{font-size: 30px;}
+  #section04 .textBox .infoBox .infoLeftBox span{font-size: 30px;}
+  #section04 .textBox .infoBox .infoLeftBox strong{font-size: 24px;}
+  #section04 .control button.prev{left: 20px;}
+  #section04 .control button.next{right: 20px;}
+
+}
+
+@media (max-width: 480px){
+
+  #section04 .mapBox{padding-top: 60%;}
+  #section04 .textBox .topTextBox .text br{display: none;}
+  #section04 .textBox .topTextBox .title,
+  #section04 .textBox .topTextBox .title strong{font-size: 22px;}
+  #section04 .textBox .infoBox .infoLeftBox span{font-size: 22px;}
+  #section04 .textBox .infoBox .infoLeftBox strong{font-size: 18px;}
+  #section04 .textBox .infoBox{flex-direction: column; gap: 20px 0;}
+  #section04 .control button{top: 27%;}
+
+}
+
+/* section05 */
+#section05{background: url(../images/main/bg04.jpg)no-repeat center;}
+#section05 .mainTitleBox{height: 100vh; display: flex; align-items: center; flex-direction: column; justify-content: center;}
+#section05 .mainTitleBox .mainText span{color: #e7ca86;}
+#section05 .mainText02{margin-top: 30px;}
+#section05 .mainTitleBox .mainTopText{color: #fff;}
+.mainTitleBox{text-align: center;}
+.mainTitleBox .mainTopText{margin-bottom: 40px; font-size: 54px; color: #000; font-family: 'OoohBaby';}
+.mainTitleBox .mainBorderText{margin-bottom: 30px; color: #fff; border-color: #fff;}
+.mainTitleBox .mainTitle{margin-bottom: 40px; color: #fff; font-size: 38px; line-height: 1.2; word-break: keep-all; text-transform: uppercase;}
+.mainTitleBox .mainTitle strong{font-size: 56px;}
+.mainTitleBox .mainText{color: #fff; font-weight: 500; line-height: 1.7;}
+
+@media (max-width: 1199px){
+
+  .mainTitleBox .mainTitle,
+  .mainTitleBox .mainTitle strong{font-size: 36px;}
+  .mainTitleBox .mainTopText{font-size: 40px;}
+
+}
+
+@media (max-width: 767px){
+
+  .mainTitleBox .mainTitle,
+  .mainTitleBox .mainTitle strong{font-size: 30px;}
+  .mainTitleBox .mainText01 br{display: none;}
+
+}
+
+@media (max-width: 480px){
+
+  .mainTitleBox .mainTitle,
+  .mainTitleBox .mainTitle strong{font-size: 22px!important;}
+
+  #section05 .mainTitleBox .mainText span{display: block;}
+
+}
+
+/* section06 */
+#section06{position: relative; background: url(../images/main/bg07.jpg)no-repeat center / cover;}
+#section06 .floorGuideBox{height: 100vh; display: flex; align-items: center; justify-content: center; gap: 0 130px;}
+#section06 .floorGuideBox .floorGuideInfoBox{max-width: 584px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox{margin: 0 0 40px -65px; position: relative; min-height: 366px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox img{display: block; position: absolute; max-width: 100%;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img01{top:0; left: 94px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img02{top: 104px; left:0;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img03{top: 104px; left:218px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img04{top: 104px; right:65px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img05{bottom: 76px; left:218px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img06{bottom: 76px; right:73px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img07{bottom: 0; left:66px;}
+#section06 .floorGuideBox .floorGuideInfoBox .imgBox .img08{bottom: 0; left: 218px;}
+#section06 .floorGuideSlideBox .topBox{margin-bottom: 50px; display: flex; gap: 0 18px; align-items: flex-end;}
+#section06 .floorGuideSlideBox .topBox span{display: block; font-size: 88px; font-weight: 700; line-height: 1;}
+#section06 .floorGuideSlideBox .topBox p{font-weight: 500; color: #202020; font-size: 20px; line-height: 1.2;}
+#section06 .floorGuideSlideBox .topBox01 span{color: #ae7f29;}
+#section06 .floorGuideSlideBox .topBox02 span{color: #002042;}
+#section06 .floorGuideSlideBox .topBox03 span{color: #e5aa38;}
+#section06 .floorGuideSlideBox .imgBox img{display: block; max-width: 100%;}
+#section06 .floorGuideBox .floorGuideInfoBox .textBox span{display: inline-block; margin-bottom: 20px;font-size: 14px; color: #000; padding: 3px; letter-spacing: 3px; border: 1px solid #7b7b7b; border-width: 1px 0; font-weight: 500;}
+#section06 .floorGuideBox .floorGuideInfoBox .textBox dl{margin-bottom: 6px; display: flex; gap: 0 12px; }
+#section06 .floorGuideBox .floorGuideInfoBox .textBox dl:last-child{margin-bottom: 0;}
+#section06 .floorGuideBox .floorGuideInfoBox .textBox dl dt{width: 65px; flex-shrink: 0; color: #8f7542; font-size: 14px; font-weight: 500;}
+#section06 .floorGuideBox .floorGuideInfoBox .textBox dl dd{font-size: 14px; font-weight: 500; color: #666;}
+
+@media (max-width: 1199px){
+
+  #section06 .floorGuideBox .floorGuideInfoBox{text-align: center;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox{margin: 0 0 40px;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img04{right:0;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img06{right: 8px;}
+  #section06{padding: 100px 0;}
+  #section06,
+  #section06 .floorGuideBox{height: auto;}
+  #section06, #section06 .floorGuideBox{flex-direction: column; gap: 50px 0;}
+  #section06 .floorGuideSlideBox .topBox{flex-direction: column; align-items: center; text-align: center; gap: 20px 0;}
+  #section06 .floorGuideSlideBox .topBox span{font-size: 70px;}
+  #section06 .floorGuideSlideBox .topBox p{font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  #section06 .floorGuideSlideBox .topBox span{font-size: 50px;}
+  #section06 .floorGuideSlideBox .topBox p{font-size: 16px;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl:last-child{margin-bottom: 0;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl{margin-bottom: 24px; flex-direction: column;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl dt{text-align: center; width: 100%;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox{display: flex; align-items: flex-start; flex-wrap: wrap; gap: 8px; justify-content: center;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox img{position: static;}
+  
+}
+
+@media (max-width: 480px){
+
+  #section06{padding: 80px 0;}
+  #section06 .floorGuideSlideBox .topBox span{font-size: 36px;}
+  #section06 .floorGuideSlideBox .topBox p{font-size: 16px;}
+
+}
+
+/* section07 */
+#section07{position: relative; background: url(../images/main/bg06.jpg)no-repeat center / cover;}
+#section07 .spaceBox{width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);}
+#section07 .topBox{margin-bottom: 60px; display: flex; align-items: center;}
+#section07 .topBox .spaceImgBox{width: 193px; flex-shrink: 0;}
+#section07 .topBox .spaceTextBox{position: relative; padding: 0 20px 0 40px;}
+#section07 .topBox .spaceTextBox::before{content: ''; position: absolute; left:0; right:0; bottom: 34px; width: 100%; height: 1px; background-color: #666;}
+#section07 .topBox .spaceTextBox h3{margin-bottom: 15px; font-size: 56px; font-weight: 700; color: #cda657; line-height: 1; letter-spacing: -2px;}
+#section07 .topBox .spaceTextBox p{font-size: 24px; color: #202020; line-height: 1.2;}
+#section07 .topBox .spaceTextBox dl{display: flex; gap: 0 10px; letter-spacing: -1px;}
+#section07 .topBox .spaceTextBox dl dt,
+#section07 .topBox .spaceTextBox dl dd{font-weight: 700; color: #666;}
+#section07 .topBox .spaceInfoBox{margin-top: 25px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 15px;}
+#section07 .box .imgBox img{width: 100%;}
+#section07 .box{max-width: 800px; margin: 0 auto;}
+#section07 .control button{ position: absolute; top: 63%;}
+#section07 .control button.prev{left:320px;}
+#section07 .control button.prev::after{content: ''; left: 0; transform: translateY(-50%) rotate(45deg);  border-left: 2px solid #515151;
+  border-bottom: 2px solid #515151;;}
+#section07 .control button.next::after{content: ''; right: 0; transform: translateY(-50%) rotate(45deg); border-top: 2px solid #515151;
+  border-right: 2px solid #515151;}
+#section07 .control button.next{right:320px;}
+#section07 .control button::after{content: ''; width: 23px; height: 23px; position: absolute; top: 50%; border-radius: 3px;}
+
+@media (max-width: 1680px){
+
+  #section07 .control button.prev{left: 250px;}
+  #section07 .control button.next{right: 250px;}
+
+}
+
+@media (max-width: 1440px){
+
+  #section07 .control button.prev{left: 170px;}
+  #section07 .control button.next{right: 170px;}
+
+}
+
+@media (max-width: 1199px){
+
+  #section07 .control{display: none;}
+  #section07{padding: 100px 0; height: auto;}
+  #section07 .spaceBox{position: static; transform: none;}
+  #section07 .topBox .spaceTextBox h3{font-size: 46px;}
+  #section07 .topBox .spaceTextBox p{font-size: 20px;}
+
+}
+
+@media (max-width: 1024px){
+
+  #section07 .topBox{flex-direction: column; gap: 30px 0;}
+  #section07 .topBox .spaceTextBox{padding: 0;}
+  #section07 .topBox .spaceTextBox p,
+  #section07 .topBox .spaceTextBox h3{text-align: center;}
+  #section07 .topBox .spaceTextBox::before{display: none;}
+  #section07 .topBox .spaceInfoBox{margin-top: 20px; padding-top: 20px; border-top: 1px solid #666;}
+  
+}
+
+@media (max-width: 767px){
+
+  #section07 .topBox .spaceTextBox h3{font-size: 32px;}
+  #section07 .topBox .spaceTextBox p{font-size: 18px;}
+
+}
+
+@media (max-width: 480px){
+
+  #section07 .topBox{gap: 20px 0;}
+  #section07 .topBox .spaceTextBox h3{font-size: 26px;}
+  #section07 .topBox .spaceTextBox p{font-size: 16px;}
+
+}
+
+
+
+
+
+
+
+
+
+/* section08 */
+#section08{position: relative;}
+#section08::after{content: ''; position: absolute; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.3);}
+#section08 video{display: block; width: 100%; height: 100%; object-fit: cover;}
+#section08 .mainTitleBox{position: absolute; top:50%; left:0; transform: translateY(-50%); width: 100%; text-align: left; z-index: 999;} 
+#section08 .logoBox img{display: block;}
+#section08 .mainText{margin-bottom: 50px;}
+#section08 .mainTitleBox .mainTitle{font-size: 58px; font-weight: 700;}
+#section08 .mainTitleBox .mainTitle strong{font-size: 80px;}
+
+@media (max-width: 480px){
+
+  #section08 .mainTitleBox{text-align: center;}
+  #section08 .logoBox img{width: 150px; margin:  0 auto;}
+
+}
+
+/* section09 */
+#section09{background: url(../images/main/bg05.jpg)no-repeat center / cover; }
+#section09 .positionBox{height: 100vh; display: flex; flex-direction: column; align-items: center; justify-content: center;}
+#section09 .titleBox{margin-bottom: 60px;}
+#section09 .titleBox img{display: block; margin: 0 auto;}
+#section09 .layoutBox{display: flex; align-items: center; justify-content: center; gap: 0 100px;}
+#section09 .mapBox{max-width: 560px; width: 100%; flex-shrink: 0;}
+#section09 .mapBox img{display: block; width: 100%;}
+#section09 .mapBox span{padding: 13px 20px; display: block; background-color: #6a4714; text-align: center; color: #fff;}
+#section09 .infoBox .box01{display: flex; align-items: center; gap: 0 26px;}#section09 .infoBox .box01 span{flex-shrink: 0; font-size: 32px; color: #333; font-weight: 700; line-height: 1;}
+#section09 .infoBox .box01 em{font-weight: 700; font-size: 86px; color: #6a4714; letter-spacing: -1px; line-height: 1;}
+#section09 .infoBox p{margin: 30px 0 34px; padding: 3px; font-size: 20px; color: #333; font-weight: 700; border: 1px solid #333; border-width: 1px 0;}
+#section09 .infoBox .box02{display: flex; margin-bottom: 30px;}
+#section09 .infoBox .box02 dl{flex: 1;}
+#section09 .infoBox .box02 dl dt{margin-bottom: 10px; font-size: 18px; color: #333; font-weight: 500;}
+#section09 .infoBox .box02 dl dd img{display: block;}
+#section09 .infoBox .box03 span{display: block; margin-bottom: 20px; font-size: 23px; color: #262626; font-weight: 500;}
+#section09 .infoBox .box03 .locationBox{display: flex; gap: 0 6px;}
+#section09 .infoBox .box03 .locationBox a img{display: block; max-width: 100%;}
+
+@media (max-width: 1199px){
+
+  #section09{padding: 100px 0;}
+  #section09,
+  #section09 .positionBox{height: auto;}
+  #section09 .positionBox{display: block;}
+  #section09 .layoutBox{flex-direction: column; gap: 50px 0;}
+  #section09 .infoBox{width: 100%; text-align: center;}
+  #section09 .infoBox .box01 span{font-size: 26px;}
+  #section09 .infoBox .box01 span br{display: none;}
+  #section09 .infoBox .box01{gap: 10px 0; justify-content: center; flex-direction: column;}
+  #section09 .infoBox .box01 em{font-size: 55px;}
+  #section09 .infoBox .box03 span{font-size: 20px; text-align: center;}
+  #section09 .infoBox .box02 dl dt{text-align: center;}
+  #section09 .infoBox .box02 dl dd img{ margin: 0 auto;}
+  #section09 .infoBox p{display: inline-block;}
+  #section09 .infoBox .box03 .locationBox{justify-content: center;}
+
+}
+
+@media (max-width: 767px){
+
+  #section09 .titleBox img{width: 320px;}
+  #section09 .infoBox .box01 span{font-size: 22px;}
+  #section09 .infoBox .box01 em{font-size: 36px;}
+  #section09 .infoBox .box03 span,
+  #section09 .infoBox p{font-size: 18px;}
+
+}
+
+@media (max-width: 480px){
+
+  #section09 .titleBox img{width: 230px;}
+  #section09 .infoBox .box01 span{font-size: 18px;}
+  #section09 .infoBox .box01 em{font-size: 28px;}
+  #section09 .infoBox .box03 span,
+  #section09 .infoBox .box02 dl dt,
+  #section09 .infoBox p{font-size: 16px;}
+  #section09 .infoBox .box02{flex-direction: column; gap: 20px 0;}
+  
+}
+
+
