@@ -5,19 +5,19 @@ $(function () {
   //   $('#headerWrap').addClass('active');
   // });
 
-  // if ('scrollRestoration' in history) {
-  //   history.scrollRestoration = 'manual';
-  // }
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-  // $(window).on('load', function () {
-  //   $('html, body').scrollTop(0);
+  $(window).on('load', function () {
+    $('html, body').scrollTop(0);
 
-  //   $('.openingMask').addClass('active');
+    $('.openingMask').addClass('active');
 
-  //   setTimeout(function () {
-  //     $('.openingMask').remove();
-  //   }, 1300);
-  // });
+    setTimeout(function () {
+      $('.openingMask').remove();
+    }, 1300);
+  });
 
   //모바일메뉴
   $('#headerWrap .mobileBtn').click(function () {
