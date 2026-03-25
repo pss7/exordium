@@ -1,8 +1,7 @@
 
 $(function () {
 
-
-  //새로고침 상단, 로드시 배경레이어
+  // 새로고침 시 상단으로 이동, 로드 시 배경 레이어
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
