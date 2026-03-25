@@ -1,23 +1,19 @@
 
 $(function () {
 
-  // $(window).load(function () {
-  //   $('#headerWrap').addClass('active');
-  // });
 
-  // if ('scrollRestoration' in history) {
-  //   history.scrollRestoration = 'manual';
-  // }
+  //새로고침 상단, 로드시 배경레이어
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
 
-  // $(window).on('load', function () {
-  //   $('html, body').scrollTop(0);
-
-  //   $('.openingMask').addClass('active');
-
-  //   setTimeout(function () {
-  //     $('.openingMask').remove();
-  //   }, 1300);
-  // });
+  $(window).on('load', function () {
+    $('html, body').scrollTop(0);
+    $('.openingMask').addClass('active');
+    setTimeout(function () {
+      $('.openingMask').remove();
+    }, 1300);
+  });
 
   //모바일메뉴
   $('#headerWrap .mobileBtn').click(function () {
