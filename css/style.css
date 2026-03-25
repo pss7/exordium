@@ -23,9 +23,9 @@ body.mobileNoScroll{overflow: hidden;}
 #headerWrap{padding: 26px 105px; position: fixed; top:0; left:0; right:0; display: flex; align-items: center; justify-content: space-between; z-index: 999999; transition: all .3s;}
 #headerWrap .logoBox h1 a,
 #headerWrap .logoBox h1 a img{display: block;}
-#headerWrap .menu .depth01{display: flex;}
+#headerWrap .menu .depth01{display: flex; gap: 0 70px;}
 #headerWrap .menu .depth01 li{position: relative;}
-#headerWrap .menu .depth01 li h2 a{position: relative; display: block; padding: 0 36px; z-index: 9;}
+#headerWrap .menu .depth01 li h2 a{position: relative; display: block; z-index: 9;}
 #headerWrap .menu .depth01 li h2 a span{display: block; position: relative; font-weight: 700; color: #222; font-size: 18px; text-transform: uppercase;}
 #headerWrap .menu .depth01 li:hover h2 a span{ color: #ca7702;}
 #headerWrap .menu .depth01 li:hover h2 a span::before{width: 100%;}
