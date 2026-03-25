@@ -40,6 +40,7 @@ section{height: 100vh; overflow: hidden;}
 
 @media (max-width: 1199px){
 
+  #section01 .fp-tableCell{display: block!important;}
   #section01 .titleBox{top: 50%; transform: translateY(-50%);}
   #section01 .titleBox h3{font-size: 60px;}
   #section01 .infoTextBox .title strong,
