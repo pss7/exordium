@@ -32,15 +32,18 @@ section{height: 100vh; overflow: hidden;}
 #section01.is-active .titleBox h3,
 #section01.is-active .titleBox p {opacity: 1; transform: translateY(0);}
 
+@media (max-width: 1440px){
+
+  #section01 .infoTextBox{padding: 50px 20px; max-width: none; position: static;}
+
+}
+
 @media (max-width: 1199px){
 
   #section01 .titleBox{top: 50%; transform: translateY(-50%);}
   #section01 .titleBox h3{font-size: 60px;}
-  #section01 .infoTextBox{padding: 50px 20px; max-width: none; position: static;}
-
   #section01 .infoTextBox .title strong,
   #section01 .infoTextBox .title{font-size: 40px;}
-
 
 }
 
@@ -132,16 +135,8 @@ section{height: 100vh; overflow: hidden;}
   border-bottom: 2px solid #515151;}
 #section03 .scrollBox02 .infoBox .imgWrap{align-items: center;}
 #section03 .scrollBox01 img,
-#section03 .scrollBox02 img {
-  opacity: 0;
-  transition: opacity 1.5s ease-in-out;
-}
-
-/* 첫번째 화면 */
-#section03.step1 .scrollBox01 img {
-  opacity: 1;
-}
-
+#section03 .scrollBox02 img {opacity: 0; transition: opacity 1.5s ease-in-out;}
+#section03.step1 .scrollBox01 img{opacity: 1;}
 #section03.step1 .scrollBox01 .img01 { transition-delay: .3s; }
 #section03.step1 .scrollBox01 .img02 { transition-delay: .25s; }
 #section03.step1 .scrollBox01 .img03 { transition-delay: .2s; }
@@ -151,17 +146,10 @@ section{height: 100vh; overflow: hidden;}
 #section03.step1 .scrollBox01 .img07 { transition-delay: .5s; }
 #section03.step1 .scrollBox01 .img08 { transition-delay: .3s; }
 #section03.step1 .scrollBox01 .img09 { transition-delay: .55s; }
-
 #section03 .infoBox .textWrap .topTitle,
 #section03 .infoBox .textWrap .mainBorderText,
 #section03 .infoBox .textWrap .title,
-#section03 .infoBox .textWrap .text {
-  opacity: 0;
-  transform: translateY(80px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-/* 첫번째 화면 텍스트 */
+#section03 .infoBox .textWrap .text {opacity: 0; transform: translateY(80px); transition: opacity .7s, transform .7s;}
 #section03.step1 .scrollBox01 .infoBox .textWrap .topTitle,
 #section03.step1 .scrollBox01 .infoBox .textWrap .mainBorderText,
 #section03.step1 .scrollBox01 .infoBox .textWrap .title,
@@ -202,6 +190,26 @@ section{height: 100vh; overflow: hidden;}
   #section03 .scrollWrap{display: block; width: 100%;}
   #section03 .infoBox .layoutBox::after,
   #section03 .infoBox .layoutBox::before{display: none;}
+
+  #section03.step1 .scrollBox02 img{opacity: 1;}
+  #section03.step1 .scrollBox02 .img01 { transition-delay: 1s; }
+  #section03.step1 .scrollBox02 .img02 { transition-delay: 1.2s; }
+  #section03.step1 .scrollBox02 .img03 { transition-delay: 1.5s; }
+  #section03.step1 .scrollBox02 .img04 { transition-delay: 2.5s; }
+  #section03.step1 .scrollBox02 .img05 { transition-delay: 1.4s; }
+  #section03.step1 .scrollBox02 .img06 { transition-delay: 3s; }
+  #section03.step1 .scrollBox02 .img07 { transition-delay: 2s; }
+  #section03.step1 .scrollBox02 .img08 { transition-delay: 1.6s; }
+  #section03.step1 .scrollBox02 .img09 { transition-delay: 1.8s; }
+  #section03.step1 .scrollBox02 .infoBox .textWrap .topTitle,
+  #section03.step1 .scrollBox02 .infoBox .textWrap .mainBorderText,
+  #section03.step1 .scrollBox02 .infoBox .textWrap .title,
+  #section03.step1 .scrollBox02 .infoBox .textWrap .text{opacity: 1; transform: translateY(0);}
+  #section03.step1 .scrollBox02 .infoBox .textWrap .topTitle { transition-delay: 1s; }
+  #section03.step1 .scrollBox02 .infoBox .textWrap .mainBorderText { transition-delay: 1.1s; }
+  #section03.step1 .scrollBox02 .infoBox .textWrap .title { transition-delay: 1.2s; }
+  #section03.step1 .scrollBox02 .infoBox .textWrap .text { transition-delay: 1.3s; }
+  #section03.horizontalStep2 .scrollWrap{transform: none;}
 
 }
 
@@ -293,11 +301,12 @@ section{height: 100vh; overflow: hidden;}
 @media (max-width: 1440px){
 
   #section04{flex-direction: column; height: auto;}
-  #section04 .mapBox{position: relative; height: 0; padding-top: 70%;}
+  #section04 .mapBox{position: relative; height: 0; padding-top: 50%;}
   #section04 .mapBox img{position: absolute; top:0; left:0; right:0; bottom: 0;}
   #section04 .mapBox,
   #section04 .textBox{width: 100%;}
   #section04 .textBox{padding: 130px 20px 100px;}
+  #section04 .box{display: block;}
 
 }
 
@@ -484,6 +493,9 @@ section{height: 100vh; overflow: hidden;}
 #section06.is-active .floorGuideBox .floorGuideInfoBox .textBox dl:nth-of-type(2){ transition-delay: 1.1s;}
 #section06.is-active .floorGuideBox .floorGuideInfoBox .textBox dl:nth-of-type(3){ transition-delay: 1.2s;}
 #section06.is-active .floorGuideBox .floorGuideInfoBox .textBox dl:nth-of-type(4){ transition-delay: 1.3s;}
+#section06.is-active .floorGuideBox .floorGuideInfoBox .textBox dl:nth-of-type(5){ transition-delay: 1.4s;}
+#section06.is-active .floorGuideBox .floorGuideInfoBox .textBox dl:nth-of-type(6){ transition-delay: 1.5s;}
+
 
 #section06.is-active .floorGuideSlideBox {opacity: 1; transform: translateX(0);transition-delay: .6s;}
 
@@ -496,33 +508,41 @@ section{height: 100vh; overflow: hidden;}
 
 @media (max-width: 1440px){
 
-  #section06 .control button.prev{left: 170px;}
-  #section06 .control button.next{right: 170px;}
+  #section06 .spaceBox,
+  #section06 .floorGuideBox{padding: 100px 20px; height: auto;} 
+  #section06 .spaceBox .slickWrap{position: static; transform: translateY(50px)!important;}
+  #section06{height: auto!important;}
+  #section06 .scrollWrap{width: 100%; display: block; transform: none!important;}
+  #section06.is-active .spaceBox .slickWrap{opacity: 1; transform: translateY(0)!important; transition-delay: .4s;}
+  #section06.is-active .topBox .spaceImgBox {opacity: 1; transform: translateX(0);  transition-delay: .8s;}
+  #section06.is-active .topBox .spaceTextBox {opacity: 1; transform: translateY(0);
+    transition-delay: 1s;}
+  #section06 .box .imgBox {opacity: 0; transform: translateY(40px) scale(.97); transition: opacity .8s, transform .8s;}
+  #section06.is-active .box .imgBox { opacity: 1; transform: translateY(0) scale(1); transition-delay: 1.2s;}
+  #section06 .control button.prev{left: 100px;}
+  #section06 .control button.next{right: 100px;}
+  #section06 .floorGuideBox{flex-direction: column; gap: 50px 0;}
+  #section06 .floorGuideSlideBox .topBox{flex-direction: column; align-items: center; text-align: center; gap: 20px 0;}  
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox{text-align: center;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl{flex-direction: column; align-items: center; gap: 0;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl{margin-bottom: 20px;}
+  #section06 .floorGuideBox .floorGuideInfoBox .textBox dl:last-child{margin-bottom: 0;}
+  #section06 .floorGuideSlideBox{width: 100%;}
 
 }
 
 @media (max-width: 1199px){
 
-  #section06 .floorGuideBox .floorGuideInfoBox{text-align: center;}
-  #section06 .floorGuideBox .floorGuideInfoBox .imgBox{margin: 0 0 40px;}
-  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img04{right:0;}
-  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img06{right: 8px;}
-  #section06{padding: 100px 0;}
-  #section06,
-  #section06 .floorGuideBox{height: auto;}
-  #section06, #section06 .floorGuideBox{flex-direction: column; gap: 50px 0;}
-  #section06 .floorGuideSlideBox .topBox{flex-direction: column; align-items: center; text-align: center; gap: 20px 0;}
   #section06 .floorGuideSlideBox .topBox span{font-size: 70px;}
   #section06 .floorGuideSlideBox .topBox p{font-size: 18px;}
-
   #section06 .control{display: none;}
-  #section06{padding: 100px 0; height: auto;}
-  #section06 .spaceBox{position: static; transform: none;}
   #section06 .topBox .spaceTextBox h3{font-size: 46px;}
   #section06 .topBox .spaceTextBox p{font-size: 20px;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox{margin: 0 0 30px;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img04{right: 0;}
+  #section06 .floorGuideBox .floorGuideInfoBox .imgBox .img06{right: 8px;}
 
 }
-
 
 @media (max-width: 1024px){
 
@@ -552,7 +572,6 @@ section{height: 100vh; overflow: hidden;}
 
 @media (max-width: 480px){
 
-  #section06{padding: 80px 0;}
   #section06 .floorGuideSlideBox .topBox span{font-size: 36px;}
   #section06 .floorGuideSlideBox .topBox p{font-size: 16px;}
   

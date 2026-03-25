@@ -40,7 +40,8 @@ $(function () {
     nextArrow: $('#section06 .control .next'),
   });
 
-var sec1Open = false;
+  /* fullpage */
+  var sec1Open = false;
   var sec3Open = false;
   var sec6Open = false;
   var busy = false;
@@ -73,7 +74,7 @@ var sec1Open = false;
     fitToSection: true,
     autoScrolling: true,
     slideSelector: '.fpSlide',
-
+    responsiveWidth:1441,
     afterRender: function () {
       setTimeout(function () {
         setActiveSection(1);

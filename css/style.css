@@ -127,7 +127,7 @@ body.mobileNoScroll{overflow: hidden;}
 #footerSection .footerWrap .footerInfoBox .infoList01{margin-bottom: 30px;}
 #footerSection .footerWrap .footerInfoBox .infoList02 li,
 #footerSection .footerWrap .footerInfoBox .infoList01 li,
-#footerSection .footerWrap .footerInfoBox .copy{color: #9b9b9b; font-weight: 500; line-height: 1.2;}
+#footerSection .footerWrap .footerInfoBox .copy{color: #9b9b9b; font-weight: 500; line-height: 1.2; word-break: keep-all;}
 #footerSection .footerWrap .footerInfoBox .copy{display: block;}
 
 @media (max-width: 767px){
@@ -147,6 +147,12 @@ body.mobileNoScroll{overflow: hidden;}
 
 @media (max-width: 480px){
 
-  #footerSection .footerWrap .footerTopBox .footerLink li{width: 50%;}
+  #footerSection .footerWrap .footerTopBox .footerLink > li{width: 50%;}
+  #footerSection .footerWrap .footerInfoBox .infoList02 li, 
+  #footerSection .footerWrap .footerInfoBox .infoList01 li, 
+  #footerSection .footerWrap .footerInfoBox .copy{font-size: 14px;}
+  #footerSection .footerWrap .footerInfoBox .infoList02 li{margin-bottom: 7px; width: 100%; text-align: center;}
+  #footerSection .footerWrap .footerInfoBox .infoList02 li:last-child{margin-bottom: 0;}
+  #footerSection .footerWrap .footerInfoBox .infoList01 li{margin-bottom: 7px;}
 
 }
