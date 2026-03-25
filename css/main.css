@@ -572,6 +572,16 @@ section{height: 100vh; overflow: hidden;}
 #section08 .mainTitleBox .mainTitle{font-size: 58px; font-weight: 700;}
 #section08 .mainTitleBox .mainTitle strong{font-size: 80px;}
 
+#section08 .mainBorderText,
+#section08 .mainTitleBox .mainTitle,
+#section08 .mainText,
+#section08 .logoBox {opacity: 0; transform: translateX(-80px); transition: opacity .9s, transform .9s;}
+#section08.is-active .mainBorderText{opacity: 1; transform: translateX(0); transition-delay: .15s;}
+#section08.is-active .mainTitleBox .mainTitle{opacity: 1; transform: translateX(0);
+  transition-delay: .35s;}
+#section08.is-active .mainText {opacity: 1; transform: translateX(0); transition-delay: .55s;}
+#section08.is-active .logoBox {opacity: 1; transform: translateX(0); transition-delay: .75s;}
+
 @media (max-width: 480px){
 
   #section08 .mainTitleBox{text-align: center;}
@@ -598,6 +608,33 @@ section{height: 100vh; overflow: hidden;}
 #section09 .infoBox .box03 span{display: block; margin-bottom: 20px; font-size: 23px; color: #262626; font-weight: 500;}
 #section09 .infoBox .box03 .locationBox{display: flex; gap: 0 6px;}
 #section09 .infoBox .box03 .locationBox a img{display: block; max-width: 100%;}
+
+/* section09 motion */
+#section09 .titleBox,
+#section09 .mapBox,
+#section09 .infoBox,
+#section09 .infoBox .box01,
+#section09 .infoBox p,
+#section09 .infoBox .box02,
+#section09 .infoBox .box03 {
+  opacity: 0;
+  transition: opacity .8s ease, transform .8s ease;
+}
+#section09 .titleBox {transform: translateY(40px);}
+#section09 .mapBox {transform: translateY(50px);}
+#section09 .infoBox {transform: translateX(50px);}
+#section09 .infoBox .box01,
+#section09 .infoBox p,
+#section09 .infoBox .box02,
+#section09 .infoBox .box03 {transform: translateY(30px);}
+#section09.is-active .titleBox {opacity: 1; transform: translateY(0); transition-delay: .1s;}
+#section09.is-active .mapBox {opacity: 1; transform: translateY(0); transition-delay: .3s;}
+#section09.is-active .infoBox {opacity: 1; transform: translateX(0); transition-delay: .45s;}
+#section09.is-active .infoBox .box01 {opacity: 1; transform: translateY(0); transition-delay: .6s;
+}
+#section09.is-active .infoBox p {opacity: 1; transform: translateY(0); transition-delay: .75s;}
+#section09.is-active .infoBox .box02 {opacity: 1; transform: translateY(0); transition-delay: .9s;}
+#section09.is-active .infoBox .box03 {opacity: 1; transform: translateY(0); transition-delay: 1.05s;}
 
 @media (max-width: 1199px){
 

@@ -40,26 +40,31 @@ $(function () {
     nextArrow: $('#section06 .control .next'),
   });
 
-
-  var sec1Open = false;
+var sec1Open = false;
   var sec3Open = false;
   var sec6Open = false;
   var busy = false;
   var current = 1;
   var firstLoad = true;
 
-  function getSectionId(index) {
-    return '#section' + ('0' + index).slice(-2);
+  function getSectionByIndex(index) {
+    return $('.section').eq(index - 1);
   }
 
   function setActiveSection(index) {
     $('.section').removeClass('is-active');
-    $(getSectionId(index)).addClass('is-active');
+    getSectionByIndex(index).addClass('is-active');
+    console.log('active section index:', index, getSectionByIndex(index).attr('id'));
   }
 
   function resetSection03() {
     $('#section03').removeClass('step1 horizontalStep2');
     sec3Open = false;
+  }
+
+  function resetSection06() {
+    $('#section06').removeClass('horizontalStep2');
+    sec6Open = false;
   }
 
   $('#fullpage').fullpage({
@@ -73,31 +78,30 @@ $(function () {
       setTimeout(function () {
         setActiveSection(1);
         firstLoad = false;
-      }, 100);
+      }, 120);
     },
 
     afterLoad: function (anchorLink, index) {
       current = index;
 
-      if (!firstLoad) {
-        setTimeout(function () {
-          setActiveSection(index);
-        }, 50);
-      }
+      setTimeout(function () {
+        setActiveSection(index);
 
-      // section03 첫 화면 진입 시 step1 부여
-      if (index == 3 && !sec3Open) {
-        setTimeout(function () {
+        if (index === 3 && !sec3Open) {
           $('#section03').addClass('step1');
-        }, 150);
-      }
+        }
+
+        if (index === 6) {
+          $('#section06 .slick').slick('setPosition');
+        }
+      }, firstLoad ? 120 : 60);
     },
 
     onLeave: function (index, nextIndex, direction) {
       if (busy) return false;
 
       /* section01 */
-      if (index == 1 && direction == 'down' && !sec1Open) {
+      if (index === 1 && direction === 'down' && !sec1Open) {
         busy = true;
         $('#section01').addClass('on2');
         sec1Open = true;
@@ -110,13 +114,13 @@ $(function () {
         return false;
       }
 
-      if (nextIndex == 1) {
+      if (nextIndex === 1) {
         $('#section01').removeClass('on2');
         sec1Open = false;
       }
 
       /* section03 */
-      if (index == 3 && direction == 'down' && !sec3Open) {
+      if (index === 3 && direction === 'down' && !sec3Open) {
         busy = true;
         $('#section03').removeClass('step1').addClass('horizontalStep2');
         sec3Open = true;
@@ -129,16 +133,16 @@ $(function () {
         return false;
       }
 
-      if (index == 4 && nextIndex == 3 && direction == 'up') {
+      if (index === 4 && nextIndex === 3 && direction === 'up') {
         $('#section03').removeClass('step1').addClass('horizontalStep2');
         sec3Open = true;
 
         setTimeout(function () {
           setActiveSection(3);
-        }, 50);
+        }, 60);
       }
 
-      if (index == 2 && nextIndex == 3 && direction == 'down') {
+      if (index === 2 && nextIndex === 3 && direction === 'down') {
         resetSection03();
 
         setTimeout(function () {
@@ -148,7 +152,7 @@ $(function () {
       }
 
       /* section06 */
-      if (index == 6 && direction == 'down' && !sec6Open) {
+      if (index === 6 && direction === 'down' && !sec6Open) {
         busy = true;
         $('#section06').addClass('horizontalStep2');
         sec6Open = true;
@@ -162,30 +166,29 @@ $(function () {
         return false;
       }
 
-      if (index == 7 && nextIndex == 6 && direction == 'up') {
+      if (index === 7 && nextIndex === 6 && direction === 'up') {
         $('#section06').addClass('horizontalStep2');
         sec6Open = true;
 
         setTimeout(function () {
           $('#section06 .slick').slick('setPosition');
           setActiveSection(6);
-        }, 50);
+        }, 60);
       }
 
-      if (index == 5 && nextIndex == 6 && direction == 'down') {
-        $('#section06').removeClass('horizontalStep2');
-        sec6Open = false;
+      if (index === 5 && nextIndex === 6 && direction === 'down') {
+        resetSection06();
 
         setTimeout(function () {
           $('#section06 .slick').slick('setPosition');
           setActiveSection(6);
-        }, 50);
+        }, 60);
       }
     }
   });
 
   $('#section01').on('mousewheel DOMMouseScroll', function (e) {
-    if (current != 1 || !sec1Open || busy) return;
+    if (current !== 1 || !sec1Open || busy) return;
 
     var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
@@ -204,7 +207,7 @@ $(function () {
   });
 
   $('#section03').on('mousewheel DOMMouseScroll', function (e) {
-    if (current != 3 || !sec3Open || busy) return;
+    if (current !== 3 || !sec3Open || busy) return;
 
     var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
@@ -224,7 +227,7 @@ $(function () {
   });
 
   $('#section06').on('mousewheel DOMMouseScroll', function (e) {
-    if (current != 6 || !sec6Open || busy) return;
+    if (current !== 6 || !sec6Open || busy) return;
 
     var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
