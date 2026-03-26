@@ -1,19 +1,6 @@
 
 $(function () {
 
-  // 새로고침 시 상단으로 이동, 로드 시 배경 레이어
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  $(window).on('load', function () {
-    $('html, body').scrollTop(0);
-    $('.openingMask').addClass('active');
-    setTimeout(function () {
-      $('.openingMask').remove();
-    }, 1300);
-  });
-
   //모바일메뉴
   $('#headerWrap .mobileBtn').click(function () {
     $('#mobileMenuWrap').addClass('active');

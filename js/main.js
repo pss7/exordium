@@ -1,6 +1,19 @@
 
 $(function () {
 
+  // 새로고침 시 상단으로 이동, 로드 시 배경 레이어
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  $(window).on('load', function () {
+    $('html, body').scrollTop(0);
+    $('.openingMask').addClass('active');
+    setTimeout(function () {
+      $('.openingMask').remove();
+    }, 1300);
+  });
+
   /* section04 */
   $('#section04 .slickWrap .slick').slick({
     slide: '.slider',
@@ -74,7 +87,7 @@ $(function () {
     fitToSection: true,
     autoScrolling: true,
     slideSelector: '.fpSlide',
-    responsiveWidth:1441,
+    responsiveWidth: 1441,
     afterRender: function () {
       setTimeout(function () {
         setActiveSection(1);

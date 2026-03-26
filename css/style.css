@@ -1,5 +1,7 @@
 @charset "UTF-8";
 
+.mb20{margin-bottom: 20px;}
+
 /* 공통 */
 body.mobileNoScroll{overflow: hidden;}
 
@@ -12,9 +14,6 @@ body.mobileNoScroll{overflow: hidden;}
 .openingMask::after{bottom: 0; transform: translateY(0);}
 .openingMask.active::before{transform: translateY(-100%);}
 .openingMask.active::after{transform: translateY(100%);}
-
-/* 가운데영역 */
-.container{max-width: 1560px; padding: 0 20px; margin: 0 auto;}
 
 /* 헤더 */
 #headerWrap.scroll{background-color: #fff; box-shadow: 0 10px 20px rgba(0,0,0,.1);}
@@ -33,11 +32,11 @@ body.mobileNoScroll{overflow: hidden;}
 #headerWrap .menu .depth02 li h3 a{display: block; /*padding: 3px 0;*/ padding: 5px 0; font-size: 15px; color: #222;}
 #headerWrap .menu .depth02 li h3 a:hover{color: #ca7702;}
 #headerWrap .infoBox{display: flex; align-items: center; gap: 0 15px;}
-#headerWrap .infoBox a{display: flex; align-items: center;}
-#headerWrap .infoBox .call{gap: 0 8px; font-weight: 700; font-size: 24px; color: #444;}
+#headerWrap .infoBox a{display: flex; align-items: center; color: #444;}
+#headerWrap .infoBox .call{gap: 0 8px; font-weight: 700; font-size: 24px; }
 #headerWrap .infoBox .call::before{content: ''; width: 19px; height: 19px; background: url(../images/common/call_icon.png)no-repeat center;}
 #headerWrap .infoBox .bar{width: 1px; height: 14px; background-color: #444;}
-#headerWrap .infoBox .reg{gap: 0 13px; font-weight: 700; font-size: 18px; color: #444;}
+#headerWrap .infoBox .reg{gap: 0 13px; font-weight: 700; font-size: 18px;}
 #headerWrap .infoBox .reg::after{content: ''; width: 10px; height: 16px; background: url(../images/common/arrow_icon01.png)no-repeat center;}
 #headerWrap .bg{display: none; position: absolute; top:148px; left:0; right:0; height: 200px; background-color: #fff; z-index: -1;}
 
@@ -118,41 +117,41 @@ body.mobileNoScroll{overflow: hidden;}
 /* 푸터 */
 #footerSection,
 #footerSection .fp-tableCell{height: auto!important;}
-#footerSection .footerWrap{padding: 80px 0; background-color: #000;}
-#footerSection .footerWrap .footerTopBox{padding: 0 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #e6e6e6;}
-#footerSection .footerWrap .footerTopBox .footerLink li a{display: block; color: #e6e6e6; font-weight: 500;}
-#footerSection .footerWrap .footerTopBox .footerLink{display: flex; flex-wrap: wrap; gap: 0 60px;}
-#footerSection .footerWrap .footerInfoBox .infoList02{display: flex; flex-wrap: wrap; gap: 0 18px}
-#footerSection .footerWrap .footerInfoBox .infoList02,
-#footerSection .footerWrap .footerInfoBox .infoList01{margin-bottom: 30px;}
-#footerSection .footerWrap .footerInfoBox .infoList02 li,
-#footerSection .footerWrap .footerInfoBox .infoList01 li,
-#footerSection .footerWrap .footerInfoBox .copy{color: #9b9b9b; font-weight: 500; line-height: 1.2; word-break: keep-all;}
-#footerSection .footerWrap .footerInfoBox .copy{display: block;}
+#footerWrap{padding: 80px 0; background-color: #000;}
+#footerWrap .footerTopBox{padding: 0 20px; margin-bottom: 40px; display: flex; align-items: center; justify-content: space-between; padding-bottom: 20px; border-bottom: 1px solid #e6e6e6;}
+#footerWrap .footerTopBox .footerLink li a{display: block; color: #e6e6e6; font-weight: 500;}
+#footerWrap .footerTopBox .footerLink{display: flex; flex-wrap: wrap; gap: 0 60px;}
+#footerWrap .footerInfoBox .infoList02{display: flex; flex-wrap: wrap; gap: 0 18px}
+#footerWrap .footerInfoBox .infoList02,
+#footerWrap .footerInfoBox .infoList01{margin-bottom: 30px;}
+#footerWrap .footerInfoBox .infoList02 li,
+#footerWrap .footerInfoBox .infoList01 li,
+#footerWrap .footerInfoBox .copy{color: #9b9b9b; font-weight: 500; line-height: 1.2; word-break: keep-all;}
+#footerWrap .footerInfoBox .copy{display: block;}
 
 @media (max-width: 767px){
 
-  #footerSection .footerWrap{padding: 30px 0 50px;}
-  #footerSection .footerWrap .footerTopBox{flex-direction: column; gap:  25px 0;}
-  #footerSection .footerWrap .footerInfoBox .infoList01 li,
-  #footerSection .footerWrap .footerInfoBox .copy{text-align: center;}
-  #footerSection .footerWrap .footerInfoBox .infoList02{justify-content: center;}
-  #footerSection .footerWrap .footerTopBox{padding: 30px 0;}
-  #footerSection .footerWrap .footerTopBox nav{width: 100%;}
-  #footerSection .footerWrap .footerTopBox .footerLink{gap: 30px 0;}
-  #footerSection .footerWrap .footerTopBox .footerLink li{width: 33.33%; gap: 0 0;}
-  #footerSection .footerWrap .footerTopBox .footerLink li a{display: block; text-align: center;}
+  #footerWrap{padding: 30px 0 50px;}
+  #footerWrap .footerTopBox{flex-direction: column; gap:  25px 0;}
+  #footerWrap .footerInfoBox .infoList01 li,
+  #footerWrap .footerInfoBox .copy{text-align: center;}
+  #footerWrap .footerInfoBox .infoList02{justify-content: center;}
+  #footerWrap .footerTopBox{padding: 30px 0;}
+  #footerWrap .footerTopBox nav{width: 100%;}
+  #footerWrap .footerTopBox .footerLink{gap: 30px 0;}
+  #footerWrap .footerTopBox .footerLink li{width: 33.33%; gap: 0 0;}
+  #footerWrap .footerTopBox .footerLink li a{display: block; text-align: center;}
 
 }
 
 @media (max-width: 480px){
 
-  #footerSection .footerWrap .footerTopBox .footerLink > li{width: 50%;}
-  #footerSection .footerWrap .footerInfoBox .infoList02 li, 
-  #footerSection .footerWrap .footerInfoBox .infoList01 li, 
-  #footerSection .footerWrap .footerInfoBox .copy{font-size: 14px;}
-  #footerSection .footerWrap .footerInfoBox .infoList02 li{margin-bottom: 7px; width: 100%; text-align: center;}
-  #footerSection .footerWrap .footerInfoBox .infoList02 li:last-child{margin-bottom: 0;}
-  #footerSection .footerWrap .footerInfoBox .infoList01 li{margin-bottom: 7px;}
+  #footerWrap .footerTopBox .footerLink > li{width: 50%;}
+  #footerWrap .footerInfoBox .infoList02 li, 
+  #footerWrap .footerInfoBox .infoList01 li, 
+  #footerWrap .footerInfoBox .copy{font-size: 14px;}
+  #footerWrap .footerInfoBox .infoList02 li{margin-bottom: 7px; width: 100%; text-align: center;}
+  #footerWrap .footerInfoBox .infoList02 li:last-child{margin-bottom: 0;}
+  #footerWrap .footerInfoBox .infoList01 li{margin-bottom: 7px;}
 
 }

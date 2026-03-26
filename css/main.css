@@ -1,5 +1,8 @@
 @charset "UTF-8";
 
+/* 가운데영역 */
+.container{max-width: 1560px; padding: 0 20px; margin: 0 auto;}
+
 /* 공통 */
 section{height: 100vh; overflow: hidden;}
 .mainBorderText{padding: 3px; display: inline-block; font-size: 14px; color: #444; text-transform: uppercase; border: 1px solid #54636f; border-width: 1px 0; letter-spacing: 3px; overflow: hidden; word-break: keep-all;}
