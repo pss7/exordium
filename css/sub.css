@@ -268,11 +268,14 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 /* 언론보도 */
 .boardList li{margin-bottom: 20px;}
 .boardList li:last-child{margin-bottom: 0;}
-.boardList li a{display: block; padding: 50px; border: 1px solid #ddd;}
+.boardList li a{display: block; padding: 50px; border: 1px solid #ddd; transition: all .3s;}
 .boardList li a h4{margin-bottom: 5px; font-size: 20px; color: #353535;} 
 .boardList li a h4 strong{color: #b36f40; font-weight: 600;}
 .boardList li a p{margin-bottom: 5px; font-size: 14px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500;}
 .boardList li a .date{font-size: 14px; color: #777; font-weight: 500;}
+.boardList li a:hover {transform: translateY(-6px); border-color: #b36f40; box-shadow: 0 12px 30px rgba(0, 0, 0, 0.08);}
+.boardList li a:hover h4{color: #b36f40;}
+.boardList li a:hover .date {color: #b36f40;}
 
 @media (max-width: 1199px){
 
