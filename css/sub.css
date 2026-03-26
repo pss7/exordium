@@ -7,10 +7,23 @@
 .subContentBox{padding: 0 0 100px;}
 .tableWrap{width: 100%;}
 table{width: 100%; border: 2px solid #000; border-width: 2px 0; border-collapse: collapse; table-layout: fixed;}
-table tbody tr {border-bottom: 1px solid #444;}
+table tbody tr {border-bottom: 1px solid #ddd;}
 table tbody th {padding: 20px 20px; color: #444; letter-spacing: 3px; font-weight: 400; background: #f1f1f1;
   vertical-align: top;}
 table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
+
+/* 모바일 이미지 크게 보기 */
+.zoomViewBox{position: relative;}
+.zoomViewBox .zoomView{display: none; position: absolute; bottom: 0px; right: 0px; width: 42px; height: 42px; background: url(../images/common/zoomview_icon.png) no-repeat; background-size: 42px 42px;}
+
+.tit{font-size: 30px; color: #202020;}
+
+@media (max-width: 1199px){
+
+  .tit{font-size: 26px;}
+
+}
+
 @media (max-width: 768px) {
 
   .tableWrap { padding-bottom: 20px; overflow-x: auto; }
@@ -18,20 +31,17 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   table tbody th,
   table tbody td {padding: 15px; font-size: 14px;}
 
-}
-.tit{font-size: 30px; color: #202020;}
-
-
-/* 모바일 이미지 크게 보기 */
-.zoomViewBox{position: relative;}
-.zoomViewBox .zoomView{display: none; position: absolute; bottom: 0px; right: 0px; width: 42px; height: 42px; background: url(../images/common/zoomview_icon.png) no-repeat; background-size: 42px 42px;}
-
-@media (max-width: 767px){
-
   .zoomViewBox .zoomView{display: block; bottom: 20px; right: 20px;}
-  
+
+  .tit{font-size: 22px;}
+
 }
 
+@media (max-width: 480px){
+
+  .tit{font-size: 20px;}
+
+}
 
 /* 서브 헤더 */
 #headerWrap.hover .logoBox h1 a img,
@@ -81,6 +91,7 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 .subTopTitleBox h2 span:nth-child(6){transition-delay: .6s;}
 .subTopTitleBox h2 span:nth-child(7){transition-delay: .7s;}
 .subTopTitleBox h2 span:nth-child(8){transition-delay: .8s;}
+.subTopTitleBox h2 span:nth-child(9){transition-delay: .9s;}
 .subTopTitleBox.active .imgBox img{transform: scale(1);}
 .subTopTitleBox.active h2 span{opacity: 1; transform: translateY(0);}
 
@@ -131,26 +142,29 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 /* 사업개요 */
 .subContentBox .tit{padding-left: 22px;}
 .subContentBox .overviewBox .overviewImgWrap{position: relative; margin-bottom: 60px;}
-.subContentBox .overviewBox .overviewImgBox .imgBox {height: 800px;}
-.subContentBox .overviewBox .overviewImgBox .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
-.subContentBox .overviewBox .overviewNavImg{display: flex; gap: 0 20px; position: absolute; left:28px; bottom: 20px; z-index: 9;}
-.subContentBox .overviewBox .overviewNavImg .btn{ display: block; width: 200px; height: 125px;}
-.subContentBox .overviewBox .overviewNavImg .btn.active{border: 3px solid #d2b54b;}
+.subContentBox .overviewBox .overviewMainimg .imgBox {height: 800px;}
+.subContentBox .overviewBox .overviewMainimg .imgBox img{display: block; width: 100%; height: 100%; object-fit: cover;}
+.subContentBox .overviewBox .overviewNavImg{display: flex; gap: 0 20px; position: absolute; left:28px; right: 0; bottom: 20px; z-index: 9;}
+.subContentBox .overviewBox .overviewNavImg .btn{position: relative; margin-right: 20px; display: block; width: 200px; height: 125px;}
+.subContentBox .overviewBox .overviewNavImg .btn::after{content: ''; position: absolute; top:0; left:0; right:0; bottom: 0; background-color: rgba(0,0,0,.5);}
+.subContentBox .overviewBox .overviewNavImg .btn.slick-current{border: 3px solid #d2b54b;}
+.subContentBox .overviewBox .overviewNavImg .btn.slick-current::after{display: none;}
 .subContentBox .overviewBox .overviewNavImg .btn img{display: block; width: 100%; height: 100%; object-fit: cover;}
-.subContentBox .overviewBox .overviewNavImg .slide{margin-right: 20px;}
+
 
 @media (max-width: 1199px){
 
-  .subContentBox .overviewBox .overviewImgBox .imgBox {height: 600px;}
+  .subContentBox .tit{padding-left: 0;}
+  .subContentBox .overviewBox .overviewMainimg .imgBox {height: 600px;}
   .subContentBox .overviewBox .overviewNavImg{position: static; margin-top: 20px;}
 
 }
 
 @media (max-width: 767px){
 
-  .subContentBox .overviewBox .overviewImgBox .imgBox {height: 350px;}
+  .subContentBox .overviewBox .overviewMainimg .imgBox {height: 350px;}
   .subContentBox .overviewBox .overviewNavImg{width: 767px; gap: 0 10px;}
-  .subContentBox .overviewBox .overviewNavImg .btn{width: 150px; height: 100px;}
+  .subContentBox .overviewBox .overviewNavImg .btn{width: 150px; height: 100px; margin-right: 10px;}
   .subContentBox .overviewBox .overviewNavImg .btn.active{border: 2px solid #d2b54b;}
 
 }
@@ -248,5 +262,27 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
   .directionsBox .directionsMapBox .directionsInfoList{gap: 30px 0; padding: 40px 20px;}
   .directionsBox .directionsMapBox .directionsInfoList dl{width: 100%;}
+
+}
+
+/* 언론보도 */
+.boardList li{margin-bottom: 20px;}
+.boardList li:last-child{margin-bottom: 0;}
+.boardList li a{display: block; padding: 50px; border: 1px solid #ddd;}
+.boardList li a h4{margin-bottom: 5px; font-size: 20px; color: #353535;} 
+.boardList li a h4 strong{color: #b36f40; font-weight: 600;}
+.boardList li a p{margin-bottom: 5px; font-size: 14px; color: #666; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; font-weight: 500;}
+.boardList li a .date{font-size: 14px; color: #777; font-weight: 500;}
+
+@media (max-width: 1199px){
+
+  .boardList li a{padding: 30px 20px;}
+  .boardList li a h4{font-size: 18px;}
+
+}
+
+@media (max-width: 768px){
+
+  .boardList li a h4{font-size: 16px;}
 
 }
