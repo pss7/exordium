@@ -68,7 +68,7 @@ body.mobileNoScroll{overflow: hidden;}
 
   #headerWrap .menu,
   #headerWrap .infoBox{display: none;}
-  #headerWrap .logoBox h1 a img{width: 75px;}
+  #headerWrap .logoBox h1 a img{width: 75px!important;}
   #headerWrap{padding: 15px 20px; background-color: rgba(255,255,255, .6)}
   #headerWrap .bg{display: none!important;}
 
