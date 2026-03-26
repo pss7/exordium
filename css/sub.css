@@ -289,3 +289,35 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .boardList li a h4{font-size: 16px;}
 
 }
+
+/* 홍보영상 */
+.promotionBox video{display: block; width: 100%; height: 100%; object-fit: cover;}
+
+
+
+.tabList{display: flex; flex-wrap: wrap; margin-bottom: 40px;}
+.tabList li {flex: 1 1 33.33%;}
+.tabList li .tabBtn{width: 100%; padding: 22px 10px; display: block; font-size: 18px; color: #fff; font-weight: 500;}
+.tabList li .tabBtn.active{background-color: #9d6825!important;}
+.tabList li:nth-child(odd) .tabBtn{background-color: #a8a8a8;}
+.tabList li:nth-child(even) .tabBtn{background-color: #9b9b9b;}
+.tabContent{position: relative; height: 0; padding-top: 56%;}
+.tabContent video{position: absolute; top:0; left:0; right:0; bottom: 0;}
+
+@media(max-width: 1199px){
+
+  .tabList li .tabBtn{padding: 15px 10px; font-size: 16px;}
+
+}
+
+@media (max-width: 767px) {
+
+  .tabList li{flex: 1 1 100%;}
+  
+}
+
+@media (max-width: 480px) {
+
+  .tabContent{padding-top: 80%;}
+  
+}
