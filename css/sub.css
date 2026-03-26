@@ -34,14 +34,10 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
 
 /* 서브 헤더 */
-
-
-
-
 #headerWrap.hover .logoBox h1 a img,
 #headerWrap.scroll .logoBox h1 a img{display: none;}
-#headerWrap.hover .logoBox h1 a img.scroll,
-#headerWrap.scroll .logoBox h1 a img.scroll{display: block;}
+#headerWrap.hover .logoBox h1 a img.scrollLogo,
+#headerWrap.scroll .logoBox h1 a img.scrollLogo{display: block;}
 #headerWrap.hover .infoBox .bar,
 #headerWrap.scroll .infoBox .bar{background-color: #222;}
 #headerWrap.hover .menu .depth01 li h2 a span,
@@ -53,16 +49,13 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 #headerWrap.hover .infoBox .reg::after,
 #headerWrap.scroll .infoBox .reg::after{background: url(../images/common/arrow_icon01.png) no-repeat center;}
 
-#headerWrap .logoBox h1 a img.scroll{display: none;}
+#headerWrap .logoBox h1 a img.scrollLogo{display: none;}
 #headerWrap .menu .depth01 li h2 a span,
 #headerWrap .infoBox a{color: #fff;}
 #headerWrap .infoBox .call::before{background: url(../images/common/call_icon02.png) no-repeat center;}
 #headerWrap .infoBox .reg::after{background: url(../images/common/arrow_icon02.png) no-repeat center;}
 #headerWrap .infoBox .bar{background-color: #fff;}
 #headerWrap .logoBox h1 a img{width: 138px;}
-
-
-
 
 /* 서브 브레드크럼 */
 .breadcrumbBox{padding: 34px 20px;}
@@ -206,5 +199,54 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .environmentBox .environmentInfoBox .bar{width: 36px;}
   .environmentBox .environmentInfoBox .text br{display: none;}
   .environmentBox .environmentInfoList li .imgBox{margin-bottom: 30px;}
+
+}
+
+/* 오시는 길 */
+.directionsBox .directionsMapBox .layouyBox{display: flex;}
+.directionsBox .directionsMapBox .directionsImgBox{display: flex; align-items: center; justify-content: center; background-color: #f3f3f3;}
+.directionsBox .directionsMapBox .directionsImgBox img{display: block; width: 100%;}
+.directionsBox .directionsMapBox .directionsInfoBox .logoBox{margin-bottom: 45px;}
+.directionsBox .directionsMapBox .directionsInfoBox .logoBox img{display: block; margin: 0 auto; max-width: 100%;}
+.directionsBox .directionsMapBox .directionsInfoBox span{display: block; margin-bottom: 25px; font-size: 18px; color: #4b4b4b; font-weight: 500;}
+.directionsBox .directionsMapBox .directionsInfoBox{ width: 387px; padding: 70px 52px 100px; background: url(../images/sub/directions/bg.jpg)no-repeat center / cover;}
+.directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox .mapLink{margin-bottom: 20px;}
+.directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox .mapLink:last-child{margin-bottom: 0;}
+.directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox a,
+.directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox img{display: block;}
+.directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox img{max-width: 100%;}
+.directionsBox .directionsMapBox .directionsInfoList{padding: 20px; display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 20px 26px; background-color: #4872a9;}
+.directionsBox .directionsMapBox .directionsInfoList dl{display: flex; font-size: 18px; color: #fff;}
+.directionsBox .directionsMapBox .directionsInfoList dl dt{display: inline-flex; flex-shrink: 0;}
+.directionsBox .directionsMapBox .directionsInfoList dl dt::after{content: ":"; display: inline-block; margin: 0 6px;}
+
+
+@media (max-width: 1480px){
+
+  .directionsBox .directionsMapBox .directionsInfoList{gap: 20px 0; justify-content: flex-start;}
+  .directionsBox .directionsMapBox .directionsInfoList dl{width: 50%; justify-content: center; font-size: 16px;}
+
+}
+
+@media (max-width: 1024px){
+
+  .directionsBox .directionsMapBox .layouyBox{flex-direction: column;} 
+  .directionsBox .directionsMapBox .directionsInfoBox{padding: 50px 20px; width: 100%;}
+  .directionsBox .directionsMapBox .directionsInfoBox span{text-align: center;}
+  .directionsBox .directionsMapBox .directionsInfoBox .mapBtnBox img{margin: 0 auto;}
+
+}
+
+@media (max-width: 767px){
+
+  .directionsBox .directionsMapBox .directionsInfoList dl{gap: 6px 0; flex-direction: column; align-items: center;}
+  .directionsBox .directionsMapBox .directionsInfoList dl dt::after{display: none;}
+
+}
+
+@media (max-width: 480px){
+
+  .directionsBox .directionsMapBox .directionsInfoList{gap: 30px 0; padding: 40px 20px;}
+  .directionsBox .directionsMapBox .directionsInfoList dl{width: 100%;}
 
 }
