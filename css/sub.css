@@ -144,3 +144,38 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .subContentBox .overviewBox .overviewNavImg .btn.active{border: 2px solid #d2b54b;}
 
 }
+
+/* 입지환경 */
+.environmentBox .mapBox img{display: block; width: 100%; height: 100%; object-fit: cover;} 
+.environmentBox .environmentInfoBox{padding: 130px 100px; min-height: 973px; background: url(../images/sub/environment/environment_bg.jpg)no-repeat center bottom / cover;}
+.environmentBox .environmentInfoBox .title{font-size: 36px; color: #fff; line-height: 1.3; font-weight: 300; letter-spacing: -1px;}
+.environmentBox .environmentInfoBox .title strong{font-size: 48px; font-weight: 700;}
+.environmentBox .environmentInfoBox .bar{margin: 56px 0; display: block; width: 74px; height: 1px; background-color: #fff;} 
+.environmentBox .environmentInfoBox .text{margin-bottom: 60px; font-weight: 300; color: #fff; line-height: 1.6;}
+.environmentBox .environmentInfoList{display: flex; flex-wrap: wrap; gap: 60px 20px;}
+.environmentBox .environmentInfoList li .imgBox{margin-bottom: 45px;}
+.environmentBox .environmentInfoList li .imgBox img{display: block; width: 100%;} 
+.environmentBox .environmentInfoList li h4{margin-bottom: 30px; font-size: 22px; color: #fff;}
+.environmentBox .environmentInfoList li .infoList li{font-weight: 300; color: #fff; font-size: 14px; font-weight: 300; line-height: 1.7; letter-spacing: -1px;}
+
+@media (max-width: 1199px){
+
+  .environmentBox .environmentInfoBox{padding: 130px 50px;}
+  .environmentBox .environmentInfoBox .title{font-size: 36px; text-align: center;}
+  .environmentBox .environmentInfoBox .title strong{font-size: 44px;}
+  .environmentBox .environmentInfoBox .text{text-align: center;}
+  .environmentBox .environmentInfoList{justify-content: center;}
+  .environmentBox .environmentInfoBox .bar{margin: 50px auto;}
+  .environmentBox .environmentInfoList li h4{text-align: center;}
+  .environmentBox .environmentInfoList li{text-align: center;}
+  
+}
+
+@media (max-width: 1024px){
+
+  .environmentBox .environmentInfoBox .title{font-size: 24px;}
+  .environmentBox .environmentInfoBox .title strong{font-size: 32px;}
+  .environmentBox .environmentInfoBox .bar{width: 42px;}
+  .environmentBox .environmentInfoBox .text br{display: none;}
+
+}
