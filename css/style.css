@@ -38,7 +38,7 @@ body.mobileNoScroll{overflow: hidden;}
 #headerWrap .infoBox .bar{width: 1px; height: 14px; background-color: #444;}
 #headerWrap .infoBox .reg{gap: 0 13px; font-weight: 700; font-size: 18px;}
 #headerWrap .infoBox .reg::after{content: ''; width: 10px; height: 16px; background: url(../images/common/arrow_icon01.png)no-repeat center;}
-#headerWrap .bg{display: none; position: absolute; top:148px; left:0; right:0; height: 200px; background-color: #fff; z-index: -1;}
+#headerWrap .bg{display: none; position: absolute; top:147px; left:0; right:0; height: 200px; background-color: #fff; z-index: -1;}
 
 @media (min-width: 1200px){
   

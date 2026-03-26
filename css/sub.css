@@ -34,12 +34,23 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
 
 /* 서브 헤더 */
+
+
+
+
+#headerWrap.hover .logoBox h1 a img,
 #headerWrap.scroll .logoBox h1 a img{display: none;}
+#headerWrap.hover .logoBox h1 a img.scroll,
 #headerWrap.scroll .logoBox h1 a img.scroll{display: block;}
+#headerWrap.hover .infoBox .bar,
 #headerWrap.scroll .infoBox .bar{background-color: #222;}
+#headerWrap.hover .menu .depth01 li h2 a span,
+#headerWrap.hover .infoBox a,
 #headerWrap.scroll .infoBox a,
 #headerWrap.scroll .menu .depth01 li h2 a span{color: #222;}
+#headerWrap.hover .infoBox .call::before
 #headerWrap.scroll .infoBox .call::before{background: url(../images/common/call_icon.png) no-repeat center;}
+#headerWrap.hover .infoBox .reg::after,
 #headerWrap.scroll .infoBox .reg::after{background: url(../images/common/arrow_icon01.png) no-repeat center;}
 
 #headerWrap .logoBox h1 a img.scroll{display: none;}
@@ -49,6 +60,9 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 #headerWrap .infoBox .reg::after{background: url(../images/common/arrow_icon02.png) no-repeat center;}
 #headerWrap .infoBox .bar{background-color: #fff;}
 #headerWrap .logoBox h1 a img{width: 138px;}
+
+
+
 
 /* 서브 브레드크럼 */
 .breadcrumbBox{padding: 34px 20px;}

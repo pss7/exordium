@@ -30,11 +30,13 @@ $(function () {
   //헤더 
   $('#headerWrap nav .depth01 li').mouseover(function () {
     $('#headerWrap').addClass('active');
+    $('#headerWrap').addClass('hover');
     $('#headerWrap nav .depth02').stop().fadeIn();
     $('#headerWrap .bg').stop().slideDown();
   });
   $('#headerWrap .menu').mouseleave(function () {
     $('#headerWrap').removeClass('active');
+    $('#headerWrap').removeClass('hover');
     $('#headerWrap nav .depth02').stop().fadeOut();
     $('#headerWrap .bg').stop().slideUp();
   });
