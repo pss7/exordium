@@ -5,8 +5,6 @@
 
 /* 공통 */
 .subContentBox{padding: 0 0 100px;}
-
-
 .tableWrap{width: 100%;}
 table{width: 100%; border: 2px solid #000; border-width: 2px 0; border-collapse: collapse; table-layout: fixed;}
 table tbody tr {border-bottom: 1px solid #444;}
@@ -21,13 +19,18 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   table tbody td {padding: 15px; font-size: 14px;}
 
 }
-
-
-
-
-
-
 .tit{font-size: 30px; color: #202020;}
+
+
+/* 모바일 이미지 크게 보기 */
+.zoomViewBox{position: relative;}
+.zoomViewBox .zoomView{display: none; position: absolute; bottom: 0px; right: 0px; width: 42px; height: 42px; background: url(../images/common/zoomview_icon.png) no-repeat; background-size: 42px 42px;}
+
+@media (max-width: 767px){
+
+  .zoomViewBox .zoomView{display: block; bottom: 20px; right: 20px;}
+  
+}
 
 
 /* 서브 헤더 */
@@ -177,5 +180,17 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .environmentBox .environmentInfoBox .title strong{font-size: 32px;}
   .environmentBox .environmentInfoBox .bar{width: 42px;}
   .environmentBox .environmentInfoBox .text br{display: none;}
+
+}
+
+@media (max-width: 767px){
+
+  .environmentBox .environmentInfoBox{padding: 100px 20px;}
+  .environmentBox .environmentInfoList li h4{margin-bottom: 20px; font-size: 20px;}
+  .environmentBox .environmentInfoBox .title{font-size: 22px;}
+  .environmentBox .environmentInfoBox .title strong{font-size: 26px;}
+  .environmentBox .environmentInfoBox .bar{width: 36px;}
+  .environmentBox .environmentInfoBox .text br{display: none;}
+  .environmentBox .environmentInfoList li .imgBox{margin-bottom: 30px;}
 
 }
