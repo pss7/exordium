@@ -298,8 +298,8 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 .tabList li .tabBtn.active{background-color: #9d6825!important;}
 .tabList li:nth-child(odd) .tabBtn{background-color: #a8a8a8;}
 .tabList li:nth-child(even) .tabBtn{background-color: #9b9b9b;}
-.tabContent{position: relative; height: 0; padding-top: 56%;}
-.tabContent video{position: absolute; top:0; left:0; right:0; bottom: 0;}
+.promotionBox .tabContent{position: relative; height: 0; padding-top: 56%;}
+.promotionBox .tabContent video{position: absolute; top:0; left:0; right:0; bottom: 0;}
 
 @media(max-width: 1199px){
 
@@ -315,7 +315,7 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
 @media (max-width: 480px) {
 
-  .tabContent{padding-top: 80%;}
+ .promotionBox .tabContent{padding-top: 80%;}
   
 }
 
@@ -382,5 +382,99 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .textBox .title{margin-bottom: 22px;}
   .textBox .title strong{font-size: 32px;}
   .textBox .text br{display: none;}
+
+}
+
+/* 뷰 */
+.viewBox .viewTopImgBox{position: relative; margin-bottom: -450px; display: flex; justify-content: flex-end;}
+.viewBox .viewTopImgBox img{display: block; max-width: 100%;}
+.viewBox .viewContetnBox01{ padding-bottom: 72px; display: flex; flex-direction: column; justify-content: flex-end; max-width: 640px; height: 1320px; background: url(../images/sub/view/view_bg.jpg)no-repeat center;}
+.viewBox .viewContetnBox01 .textBox{margin-bottom: 100px;}
+.viewBox .viewContetnBox01 .textBox .topText,
+.viewBox .viewContetnBox01 .textBox .title,
+.viewBox .viewContetnBox01 .textBox .text,
+.viewBox .viewContetnBox01 .textBox .title strong{color: #fff;}
+.viewBox .viewContetnBox01 .imgBox img{display: block; margin: 0 auto; max-width: 100%;}
+.viewBox .viewContetnBox02{max-width: 578px; display: flex; flex-direction: column; align-items: flex-end;}
+.viewBox .viewContetnBox02 dl{display: flex; gap: 0 15px; margin-bottom: 10px;}
+.viewBox .viewContetnBox02 dl:last-child{margin-bottom: 0;}
+.viewBox .viewContetnBox02 dl dt{width: 162px; font-size: 15px; color: #8f7542; font-weight: 500;}
+.viewBox .viewContetnBox02 dl:nth-child(2) dt{letter-spacing: 1.5px;}
+.viewBox .viewContetnBox02 dl dd{font-size: 14px; color: #666; font-weight: 500;}
+.viewBox .viewContetnBox02 .viewText{ display: flex; flex-direction: column; justify-content: center; height: 210px;}
+.viewBox .viewContetnBox02 .imgBox img{display: block; max-width: 100%;}
+.viewBox .layoutBox{display: flex; align-items: flex-end; gap: 0 62px;}
+
+@media (max-width: 1199px){
+
+  .viewBox .layoutBox{flex-direction: column; align-items: center;}
+  .viewBox .viewTopImgBox{margin: 0; justify-content: center;}
+  .viewBox .viewContetnBox01{padding: 60px 20px; height: auto;}
+  .viewBox .viewContetnBox01 .textBox{margin-bottom: 60px;}
+
+}
+
+@media (max-width: 767px){
+
+  .viewBox .viewContetnBox02{align-items: center;}
+  .viewBox .viewContetnBox02 .viewText{padding: 30px 0; gap: 10px 0; height: auto;}
+  .viewBox .viewContetnBox02 dl{flex-direction: column; align-items: center; text-align: center;}
+
+}
+
+@media (max-width: 480px){
+
+  .viewBox .viewContetnBox01{padding: 50px 20px;}
+  .viewBox .viewContetnBox01 .textBox{margin-bottom: 50px;}
+
+}
+
+/* 타입 평면 */
+.planeBox .tabList li .tabBtn.active{background-color: #002c58!important;}
+.planeBox .planeTopInfoBox{display: flex;}
+.planeBox .planeTopInfoBox .imgBox{flex-shrink: 0;}
+.planeBox .planeTopInfoBox .imgBox img{display: block;}
+.planeBox .planeTopInfoBox .planeTextBox{display: flex; flex-direction: column; width: 100%; }
+.planeBox .planeTopInfoBox .planeTextBox .planetTopText{padding: 16px 20px 15px 30px; border-bottom: 1px solid #ddd; background-color: #f1f1f1;}
+.planeBox .planeTopInfoBox .planeTextBox .planetTopText h4{font-size: 60px; color: #cda657; letter-spacing: -2px;}
+.planeBox .planeTopInfoBox .planeTextBox .planetTopText p{font-size: 20px; color: #444; font-weight: 500; letter-spacing: -1px;}
+.planeBox .planeTopInfoBox .planeTextBox .planetInfoText{padding: 12px 20px 12px 30px; display: flex; gap: 0 20px; background-color: #fff; border-bottom: 1px solid #ddd;}
+.planeBox .planeTopInfoBox .planeTextBox .planetInfoText dl{display: flex; gap: 0 6px; color: #666; font-weight: 500;}
+.planeBox .planeImgBox img{display: block; width: 100%;}
+.planeBox .planeInfoList{padding: 50px; background-color: #e8e8e8;}
+.planeBox .planeInfoList li{font-size: 13px; color: #777; line-height: 1.3; font-weight: 500;}
+
+@media (max-width: 1199px){
+
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText{padding: 28px 20px 27px 30px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText h4{font-size: 46px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText p{font-size: 18px;}
+
+}
+
+@media (max-width: 1024px){
+
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText{text-align: center;}
+  .planeBox .planeTopInfoBox{flex-direction: column; gap: 20px 0;}
+  .planeBox .planeTopInfoBox .imgBox img{margin: 0 auto;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetInfoText{padding: 10px 20px; justify-content: center;}
+
+}
+
+@media (max-width: 767px){
+
+  .planeBox .planeInfoList{padding: 30px 20px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText{padding: 30px 20px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText h4{margin-bottom: 7px; font-size: 32px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText p{font-size: 16px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetInfoText{padding: 20px; flex-wrap: wrap; align-items: center; gap: 15px 0;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetInfoText dl{width: 50%; justify-content: center;}
+
+}
+
+@media (max-width: 480px){
+
+  .planeBox .planeTopInfoBox .planeTextBox .planetTopText h4{font-size: 26px;}
+  .planeBox .planeTopInfoBox .planeTextBox .planetInfoText dl{font-size: 14px;}
 
 }
