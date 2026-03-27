@@ -1,6 +1,8 @@
 @charset "UTF-8";
 
 .mb20{margin-bottom: 20px;}
+.mb30{margin-bottom: 30px;}
+.mb60{margin-bottom: 60px;}
 
 /* 공통 */
 body.mobileNoScroll{overflow: hidden;}

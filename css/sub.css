@@ -6,30 +6,32 @@
 /* 공통 */
 .subContentBox{padding: 0 0 100px;}
 .tableWrap{width: 100%;}
-table{width: 100%; border: 2px solid #000; border-width: 2px 0; border-collapse: collapse; table-layout: fixed;}
-table tbody tr {border-bottom: 1px solid #ddd;}
-table tbody th {padding: 20px 20px; color: #444; letter-spacing: 3px; font-weight: 400; background: #f1f1f1;
+.tableType01{width: 100%; border: 2px solid #000; border-width: 2px 0; border-collapse: collapse; table-layout: fixed;}
+.tableType01 tbody tr {border-bottom: 1px solid #ddd;}
+.tableType01 tbody th {padding: 20px 20px; color: #444; letter-spacing: 3px; font-weight: 400; background: #f1f1f1;
   vertical-align: top;}
-table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
+.tableType01 tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
 /* 모바일 이미지 크게 보기 */
 .zoomViewBox{position: relative;}
 .zoomViewBox .zoomView{display: none; position: absolute; bottom: 0px; right: 0px; width: 42px; height: 42px; background: url(../images/common/zoomview_icon.png) no-repeat; background-size: 42px 42px;}
 
 .tit{font-size: 30px; color: #202020;}
+.tit02{font-size: 20px; color: #353535;}
 
 @media (max-width: 1199px){
 
   .tit{font-size: 26px;}
+  .tit02{font-size: 18px;}
 
 }
 
 @media (max-width: 768px) {
 
   .tableWrap { padding-bottom: 20px; overflow-x: auto; }
-  table {width: 720px; }
-  table tbody th,
-  table tbody td {padding: 15px; font-size: 14px;}
+  .tableType01 {width: 720px; }
+  .tableType01 tbody th,
+  .tableType01 tbody td {padding: 15px; font-size: 14px;}
 
   .zoomViewBox .zoomView{display: block; bottom: 20px; right: 20px;}
 
@@ -594,5 +596,74 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .amenityBox .amenityContetnBox01 .textBox .title{font-size: 22px;}
   .amenityBox .amenityContetnBox01 .textBox .title strong{font-size: 28px;}
 
+}
+
+/* 폼 */
+label{font-size: 20px; color: #353535; font-weight: 500;}
+input{width: 100%; padding: 26px 20px 26px 40px; background-color: #f7f7f7; color: #222; border: 0;}
+input::placeholder{color: #a9a9a9;}
+
+@media (max-width: 1199px){
+
+  label{font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  label{font-size: 16px;}
+
+}
+
+
+/* 관심고객등록 */
+.regBox .inputWrap{display: flex; flex-wrap: wrap;}
+.regBox .inputTextBox{flex: 1 1 50%; display: flex; align-items: center; gap: 0 0; border: 1px solid #ddd; border-width: 1px 0; margin-bottom: -1px;}
+.regBox label{width: 146px; flex-shrink: 0; text-align: center;}
+.regBox .acgreeContentBox{padding: 20px; height: 170px; background-color: #f7f7f7; border: 1px solid #ddd; overflow-y: auto; color: #222;}
+.tableType02{width: 100%; text-align: center ;}
+.tableType02 th{font-size: 20px; color: #353535; background-color: #f7f7f7; border: 1px solid #ddd; border-width: 1px 0; word-break: keep-all;}
+.tableType02 td{color: #666; border: 1px solid #ddd; border-width: 0 1px 1px 0;}
+.tableType02 td:last-child{border-right: 0;}
+.tableType02 th,
+.tableType02 td{padding: 25px 20px;}
+
+.inputChkBox label{padding-left: 36px; position: relative; color: #666; font-weight: 400; font-size: 16px; cursor: pointer;}
+.inputChkBox label::before{content: ''; position: absolute; top:0; left:0; width: 24px; height: 24px; border: 1px solid #ddd; background-color: #f7f7f7;}
+.inputChkBox input:checked + label::before{content: '✔'; text-align: center; line-height: 1.4;}
+
+.regBtn{display: flex; justify-content: center; align-items: center; width: 300px; height: 80px; margin: 0 auto; border: 1px solid #ddd; font-size: 20px; color: #fff; font-weight: 500; background-color: #834848;}
+
+@media (max-width: 1199px){
+
+  .regBox .inputWrap{flex-direction: column;}
+  
+  .tableType02 th{font-size: 18px;}
+  
+  .regBtn{font-size: 18px;}
+
+}
+
+@media (max-width: 767px){
+
+  .regBox label{width: 100%; border-bottom: 1px solid #ddd;}
+  .regBox .inputTextBox{flex-direction: column;}
+  .regBox label,
+  .regBox input{padding: 20px;}
+  .tableType02 th{font-size: 16px;}
+  
+  .inputChkBox label{padding-left: 32px;}
+  .inputChkBox label::before{top:1px; width: 20px; height: 20px;}
+
+  .inputChkBox input:checked + label::before{content: '✔'; text-align: center; line-height: 1.2;}
+
+}
+
+@media (max-width: 480px){
+
+  .tableType02 th,
+  .tableType02 td{font-size: 14px;}
+
+  .regBtn{width: 100%; height: 60px; font-size: 16px;}
 
 }
