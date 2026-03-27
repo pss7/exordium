@@ -133,9 +133,10 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 
 }
 
-@media (max-width: 767px){
+@media (max-width: 480px){
 
   .subTitleBox .titleBox h3{font-size: 26px;}
+  .subTitleBox p br{display: none;}
 
 }
 
@@ -383,8 +384,10 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
 .viewBox .viewContetnBox02 .viewText{ display: flex; flex-direction: column; justify-content: center; height: 210px;}
 .viewBox .viewContetnBox02 .imgBox img{display: block; max-width: 100%;}
 .viewBox .layoutBox{display: flex; align-items: flex-end; gap: 0 62px;}
+.viewBox .viewContetnBox01 .textBox .title{font-size: 35px;}
+.viewBox .viewContetnBox01 .textBox .title strong{font-size: 44px;}
 
-@media (max-width: 1199px){
+@media (max-width: 1280px){
 
   .viewBox .layoutBox{flex-direction: column; align-items: center;}
   .viewBox .viewTopImgBox{margin: 0; justify-content: center;}
@@ -399,12 +402,18 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .viewBox .viewContetnBox02 .viewText{padding: 30px 0; gap: 10px 0; height: auto;}
   .viewBox .viewContetnBox02 dl{flex-direction: column; align-items: center; text-align: center;}
 
+  .viewBox .viewContetnBox01 .textBox .title{font-size: 26px;}
+  .viewBox .viewContetnBox01 .textBox .title strong{font-size: 35px;}
+
 }
 
 @media (max-width: 480px){
 
   .viewBox .viewContetnBox01{padding: 50px 20px;}
   .viewBox .viewContetnBox01 .textBox{margin-bottom: 50px;}
+
+  .viewBox .viewContetnBox01 .textBox .title{font-size: 22px;}
+  .viewBox .viewContetnBox01 .textBox .title strong{font-size: 28px;}
 
 }
 
@@ -526,5 +535,64 @@ table tbody td {padding: 20px 20px 20px 28px; color: #414141;}
   .slideImgWrap .slideNavImg{width: 767px; gap: 0 10px;}
   .slideImgWrap .slideNavImg .btn{width: 150px; height: 100px; margin-right: 10px;}
   .slideImgWrap .slideNavImg .btn.active{border: 2px solid #d2b54b;}
+
+}
+
+/* 어메니티 */
+.amenityBox .amenityTopImgBox{position: relative; margin-bottom: -512px; display: flex;}
+.amenityBox .amenityTopImgBox img{display: block; max-width: 100%;}
+.amenityBox .amenityContetnBox01{ padding-bottom: 72px; display: flex; flex-direction: column; justify-content: flex-end; max-width: 640px; width: 100%; height: 1320px; background: url(../images/sub/amenity/bg.jpg)no-repeat center;}
+.amenityBox .amenityContetnBox01 .textBox{margin-bottom: 60px;}
+.amenityBox .amenityContetnBox01 .textBox .topText,
+.amenityBox .amenityContetnBox01 .textBox .title,
+.amenityBox .amenityContetnBox01 .textBox .text,
+.amenityBox .amenityContetnBox01 .textBox .title strong{color: #292929;}
+.amenityBox .amenityContetnBox01 .imgBox img{display: block; margin: 0 auto; max-width: 100%;}
+.amenityBox .amenityContetnBox02{width: 617px; display: flex; flex-direction: column; align-items: flex-end;}
+.amenityBox .amenityContetnBox02 dl{display: flex; gap: 0 27px; margin-bottom: 10px;}
+.amenityBox .amenityContetnBox02 dl:last-child{margin-bottom: 0;}
+.amenityBox .amenityContetnBox02 dl dt{flex-shrink: 0; font-size: 15px; color: #8f7542; font-weight: 500;}
+.amenityBox .amenityContetnBox02 dl:nth-child(2) dt{letter-spacing: 1.5px;}
+.amenityBox .amenityContetnBox02 dl dd{font-size: 14px; color: #666; font-weight: 500;}
+.amenityBox .amenityContetnBox02 .amenityText{width: 100%; padding: 60px 20px 60px 40px; display: flex; flex-direction: column; justify-content: center;}
+.amenityBox .amenityContetnBox02 .imgBox img{display: block; max-width: 100%;}
+.amenityBox .layoutBox{margin-bottom: 20px; display: flex; flex-direction: row-reverse; align-items: flex-end; justify-content: flex-end; gap: 0 22px;}
+.amenityBox .amenityContetnBox02 dl:nth-child(2) dt,
+.amenityBox .amenityContetnBox02 dl:nth-child(5) dt,
+.amenityBox .amenityContetnBox02 dl:nth-child(6) dt{letter-spacing: 2.8px;}
+.amenityBox .amenityContetnBox01 .textBox .title{font-size: 35px;}
+.amenityBox .amenityContetnBox01 .textBox .title strong{font-size: 44px;}
+.amenityBox .amenityInfoBox{display: flex;}
+.amenityBox .amenityInfoBox img{display: block; width: 100%;}
+.amenityBox .amenityInfoBox .zoomViewBox .zoomView{display: block; width: 60px; height: 60px; top:0; right:0; bottom: auto;     background: url(../images/sub/amenity/zoomview_icon.png) no-repeat center / contain;}
+
+@media (max-width: 1280px){
+
+  .amenityBox .layoutBox{flex-direction: column; align-items: center;}
+  .amenityBox .amenityTopImgBox{margin: 0; justify-content: center;}
+  .amenityBox .amenityContetnBox01{padding: 60px 20px; height: auto;}
+
+}
+
+@media (max-width: 767px){
+
+  .amenityBox .amenityContetnBox02{width: 100%; align-items: center;}
+  .amenityBox .amenityContetnBox02 .amenityText{padding: 30px 20px; gap: 10px 0; height: auto;}
+  .amenityBox .amenityContetnBox02 dl{flex-direction: column; align-items: center; text-align: center;}
+
+  .amenityBox .amenityContetnBox01 .textBox .title{font-size: 26px;}
+  .amenityBox .amenityContetnBox01 .textBox .title strong{font-size: 35px;}
+  .amenityBox .amenityInfoBox{display: block;}
+
+}
+
+@media (max-width: 480px){
+
+  .amenityBox .amenityContetnBox01{padding: 50px 20px;}
+  .amenityBox .amenityContetnBox01 .textBox{margin-bottom: 50px;}
+
+  .amenityBox .amenityContetnBox01 .textBox .title{font-size: 22px;}
+  .amenityBox .amenityContetnBox01 .textBox .title strong{font-size: 28px;}
+
 
 }
