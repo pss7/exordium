@@ -667,3 +667,51 @@ input::placeholder{color: #a9a9a9;}
   .regBtn{width: 100%; height: 60px; font-size: 16px;}
 
 }
+
+/* 입주자 모집공고 */
+.recruitBox .layoutBox{display: flex;}
+.recruitBox .recruitImgBox img{display: block; width: 100%;}
+.recruitBox .recruitDownBox .box01{background: url(../images/sub/recruit/bg01.jpg)no-repeat center / cover;}
+.recruitBox .recruitDownBox .box02{background: url(../images/sub/recruit/bg02.jpg)no-repeat center / cover;}
+.recruitBox .recruitDownBox .box01 h4 strong{color: #9fe661;}
+.recruitBox .recruitDownBox .box01 .downBtn span{color: #005558;}
+.recruitBox .recruitDownBox .box02 h4 strong{color: #74d1f0;}
+.recruitBox .recruitDownBox .box02 .downBtn span{color: #003f54;}
+.recruitBox .recruitDownBox .box{padding: 66px 66px 20px 66px; height: 50%;}
+.recruitBox .recruitDownBox .box h4{margin-bottom: 20px; font-size: 36px; color: #fff;}
+.recruitBox .recruitDownBox .box h4 strong{font-weight: 500;}
+.recruitBox .recruitDownBox .box p{margin-bottom: 35px; font-size: 14px; color: #fff;}
+.recruitBox .recruitDownBox .box .downBtn{width: 298px; height: 78px; display: flex; align-items: center; justify-content: center; background-color: #fff; font-weight: 500;}
+.recruitBox .recruitDownBox .box .downBtn span{display: flex; align-items: center; gap: 0 30px; font-size: 20px; background-color: #fff; letter-spacing: -1px;}
+.recruitBox .recruitDownBox .box .downBtn span::after{content: ''; width: 15px; height: 27px; background: url(../images/sub/recruit/arrow_icon.png)no-repeat center / contain;}
+.recruitBox .adobeReaderBox{padding: 50px; display: flex; align-items: center; justify-content: space-between; background-color:#f1f1f1;}
+.recruitBox .adobeReaderBox h5{margin-bottom: 15px; font-size: 20px; color: #a72026;}
+.recruitBox .adobeReaderBox p{font-size: 14px; color: #777; font-weight: 500;}
+.recruitBox .adobeReaderBox .adobeReaderDownBtn img{display: block; max-width: 100%;}
+
+@media(max-width: 1199px){
+
+  .recruitBox .layoutBox{flex-direction: column; gap: 0 0;}
+  .recruitBox .recruitDownBox .box{padding: 60px; height: auto; text-align: center;}
+  .recruitBox .recruitDownBox .box .downBtn{margin: 0 auto;}
+  .recruitBox .recruitDownBox .box h4{font-size: 32px;}
+  .recruitBox .adobeReaderBox{flex-direction: column; text-align: center; gap: 20px 0;}
+
+}
+
+@media(max-width: 767px){
+
+  .recruitBox .layoutBox{flex-direction: column; gap: 0 0;}
+  .recruitBox .recruitDownBox .box{padding: 40px 20px; height: auto; text-align: center;}
+  .recruitBox .recruitDownBox .box .downBtn{margin: 0 auto;}
+  .recruitBox .recruitDownBox .box h4{font-size: 24px;}
+  .recruitBox .adobeReaderBox{flex-direction: column; text-align: center; gap: 20px 0;}
+  .recruitBox .recruitDownBox .box .downBtn{width: 200px; height: 70px;}
+  .recruitBox .recruitDownBox .box .downBtn span{gap: 0 20px; font-size: 16px;}
+  .recruitBox .recruitDownBox .box .downBtn span::after{width: 10px; height: 22px;}
+  .recruitBox .adobeReaderBox h5{font-size: 18px;}
+  .recruitBox .adobeReaderBox{padding: 40px 20px;}
+  .recruitBox .recruitDownBox .box p br,
+  .recruitBox .adobeReaderBox p br{display: none;}
+
+}
