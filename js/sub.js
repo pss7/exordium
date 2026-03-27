@@ -6,20 +6,20 @@ $(function () {
     $('.subTopTitleBox').addClass('active');
   });
 
-  //사업개요
-  $('.overviewMainimg').slick({
+  //썸네일 슬라이드
+  $('.slideMainImg').slick({
     slidesToShow: 1,
     slidesToScroll: 1,
     arrows: false,
-    asNavFor: '.overviewNavImg'
+    asNavFor: '.slideNavImg'
   });
 
-  $('.overviewNavImg').slick({
+  $('.slideNavImg').slick({
     arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
     infinite: true,
-    asNavFor: '.overviewMainimg',
+    asNavFor: '.slideMainImg',
     focusOnSelect: true,
     variableWidth: true,
     swipeToSlide: true
