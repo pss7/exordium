@@ -64,7 +64,7 @@ section{height: 100vh; overflow: hidden;}
 @media (max-width: 480px){
 
   #section01 .titleBox h3{font-size: 36px;}
-  #section01 .titleBox p{font-size: 16px;}
+  #section01 .titleBox p{font-size: 14px;}
   #section01 .titleBox p br{display: none;}
   #section01 .titleBox{text-align: center;}
 
@@ -255,6 +255,7 @@ section{height: 100vh; overflow: hidden;}
   #section03 .infoBox .textWrap .title strong,
   #section03 .infoBox .textWrap .title{font-size: 22px;}
   #section03 .infoBox .textWrap .text br{display: none;}
+  #section03 .infoBox .textWrap .text{font-size: 14px;}
 
 }
 
@@ -345,6 +346,7 @@ section{height: 100vh; overflow: hidden;}
   #section04 .textBox .infoBox .infoLeftBox strong{font-size: 18px;}
   #section04 .textBox .infoBox{flex-direction: column; gap: 20px 0;}
   #section04 .control button{top: 27%;}
+  #section04.is-active .textBox .topTextBox .text{font-size: 14px;}
 
 }
 
@@ -396,6 +398,7 @@ section{height: 100vh; overflow: hidden;}
 
   .mainTitleBox .mainTitle,
   .mainTitleBox .mainTitle strong{font-size: 22px!important;}
+  .mainTitleBox .mainText{font-size: 14px;}
 
   #section05 .mainTitleBox .mainText span{display: block;}
 
@@ -577,11 +580,12 @@ section{height: 100vh; overflow: hidden;}
 @media (max-width: 480px){
 
   #section06 .floorGuideSlideBox .topBox span{font-size: 36px;}
-  #section06 .floorGuideSlideBox .topBox p{font-size: 16px;}
+  #section06 .floorGuideSlideBox .topBox p{font-size: 14px;}
   
   #section06 .topBox{gap: 20px 0;}
   #section06 .topBox .spaceTextBox h3{font-size: 26px;}
-  #section06 .topBox .spaceTextBox p{font-size: 16px;}
+  #section06 .topBox .spaceTextBox dl,
+  #section06 .topBox .spaceTextBox p{font-size: 14px;}
 
 }
 
@@ -696,8 +700,10 @@ section{height: 100vh; overflow: hidden;}
   #section09 .infoBox .box01 em{font-size: 28px;}
   #section09 .infoBox .box03 span,
   #section09 .infoBox .box02 dl dt,
-  #section09 .infoBox p{font-size: 16px;}
+  #section09 .infoBox p{font-size: 14px;}
   #section09 .infoBox .box02{flex-direction: column; gap: 20px 0;}
+  #section09.is-active .infoBox p,
+  #section09 .mapBox span{font-size: 14px;}
   
 }
 
