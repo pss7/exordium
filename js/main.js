@@ -1,6 +1,77 @@
 
 $(function () {
 
+   var $introVideoWrap = $('#introVideoWrap');
+    var $introCursorSkip = $('#introCursorSkip');
+    var introVideo = document.getElementById('introVideo');
+    var isIntroClosed = false;
+
+    if (!$introVideoWrap.length) return;
+
+    $('body').addClass('introOpen');
+
+    var mouseX = window.innerWidth / 2;
+    var mouseY = window.innerHeight / 2;
+    var currentX = mouseX;
+    var currentY = mouseY;
+
+    function animateCursor() {
+        currentX += (mouseX - currentX) * 0.16;
+        currentY += (mouseY - currentY) * 0.16;
+
+        $introCursorSkip.css({
+            left: currentX + 'px',
+            top: currentY + 'px'
+        });
+
+        requestAnimationFrame(animateCursor);
+    }
+
+    animateCursor();
+
+    function closeIntro() {
+        if (isIntroClosed) return;
+        isIntroClosed = true;
+
+        $('body').removeClass('introOpen');
+
+        if (introVideo) {
+            introVideo.pause();
+        }
+
+        $introVideoWrap.addClass('isHide');
+
+        setTimeout(function () {
+            $introVideoWrap.remove();
+        }, 450);
+    }
+
+    $introVideoWrap.on('mousemove', function (e) {
+        mouseX = e.clientX;
+        mouseY = e.clientY;
+        $introVideoWrap.addClass('isActive');
+    });
+
+    $introVideoWrap.on('mouseenter', function () {
+        $introVideoWrap.addClass('isActive');
+    });
+
+    $introVideoWrap.on('click', function () {
+        closeIntro();
+    });
+
+    $introVideoWrap.on('touchstart', function () {
+        closeIntro();
+    });
+
+    if (introVideo) {
+        introVideo.addEventListener('ended', function () {
+            closeIntro();
+        });
+    }
+
+
+
   // 새로고침 시 상단으로 이동, 로드 시 배경 레이어
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -53,7 +124,7 @@ $(function () {
     nextArrow: $('#section06 .floorGuideBox .control .next'),
   });
 
-    $('#section06 .spaceBox .slick').slick({
+  $('#section06 .spaceBox .slick').slick({
     slide: '.slider',
     autoplay: true,
     arrows: true,
@@ -73,12 +144,12 @@ $(function () {
   });
 
   /* fullpage */
-  var sec1Open = false;
-  var sec3Open = false;
-  var sec6Open = false;
-  var busy = false;
-  var current = 1;
-  var firstLoad = true;
+  let sec1Open = false;
+  let sec3Open = false;
+  let sec6Open = false;
+  let busy = false;
+  let current = 1;
+  let firstLoad = true;
 
   function getSectionByIndex(index) {
     return $('.section').eq(index - 1);

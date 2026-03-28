@@ -7,16 +7,6 @@
 /* 공통 */
 body.mobileNoScroll{overflow: hidden;}
 
-/* .openingMask{position: fixed; top: 0; left: 0;width: 100%; height: 100%;
-  z-index: 9999;}
-.openingMask::before,
-.openingMask::after{content: ''; position: absolute; left: 0;
-  width: 100%; height: 50%; background: #fff;  transition: transform 1.2s ease;}
-.openingMask::before{top: 0; transform: translateY(0);}
-.openingMask::after{bottom: 0; transform: translateY(0);}
-.openingMask.active::before{transform: translateY(-100%);}
-.openingMask.active::after{transform: translateY(100%);} */
-
 /* 헤더 */
 #headerWrap.scroll{background-color: #fff; box-shadow: 0 10px 20px rgba(0,0,0,.1);}
 #headerWrap.active{background-color: #fff;}
