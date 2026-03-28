@@ -105,12 +105,14 @@ body.introOpen {overflow: hidden;}
 
 /* 비주얼영역 */
 #section01{position: relative;}
-#section01 .titleBox h3,
-#section01 .mainBorderText,
-#section01 p{opacity: 0; transform: translateY(60px); transition: all 1s;}
+#section01 .titleBox .box {opacity: 0; transform: translateY(30px); transition: opacity .8s ease, transform .8s ease; overflow: hidden;}
+#section01 .titleBox.show .box {opacity: 1; transform: translateY(0);}
+#section01 .titleBox.show .box01 { transition-delay: .1s; }
+#section01 .titleBox.show .box02 { transition-delay: .35s; }
+#section01 .titleBox.show .box03 { transition-delay: .6s; }
+body.introOpen #section01 .titleBox .box {opacity: 0 !important; transform: translateY(30px) !important;}
 #section01 video{display: block; width: 100%;height: 100%; object-fit: cover;}
 #section01 .titleBox{width: 100%; position: absolute; top:236px; left:0; word-break: keep-all;}
-#section01 .titleBox .box{overflow: hidden;}
 #section01 .titleBox .box01{margin-bottom: 25px; }
 #section01 .titleBox .box02{margin-bottom: 27px; }
 #section01 .titleBox h3{font-size: 72px; text-transform: uppercase; line-height: 1.1; letter-spacing: -3px; overflow: hidden;}
@@ -120,7 +122,6 @@ body.introOpen {overflow: hidden;}
 #section01.is-active .mainBorderText,
 #section01.is-active .titleBox h3,
 #section01.is-active .titleBox p {opacity: 1; transform: translateY(0);}
-
 
 @media (max-width: 1199px){
 

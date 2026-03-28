@@ -1,4 +1,5 @@
 $(function () {
+
   let $introVideoWrap = $('#introVideoWrap');
   let $introCursor = $('#introCursor');
   let $introSkip = $('.introSkip');
@@ -54,14 +55,20 @@ $(function () {
 
   function showIntroVideo() {
     if (!hasIntro || !$introVideoWrap.length) return;
+
     $introVideoWrap.addClass('isVideoReady');
 
     if (introVideo) {
       let playPromise = introVideo.play();
+
       if (playPromise !== undefined) {
-        playPromise.catch(function () { });
+        playPromise.catch(function () {});
       }
     }
+  }
+
+  function showSection01Text() {
+    $('#section01 .titleBox').addClass('show');
   }
 
   function closeIntro() {
@@ -80,6 +87,10 @@ $(function () {
       stopCursor();
       $introVideoWrap.remove();
       playOpeningMask();
+
+      setTimeout(function () {
+        showSection01Text();
+      }, 200);
     }, 400);
   }
 
@@ -168,6 +179,7 @@ $(function () {
     }
   }
 
+  /* intro */
   if (hasIntro) {
     setupIntroMode();
 
@@ -190,18 +202,6 @@ $(function () {
     });
   }
 
-  if ('scrollRestoration' in history) {
-    history.scrollRestoration = 'manual';
-  }
-
-  $(window).on('load', function () {
-    $('html, body').scrollTop(0);
-
-    if (!hasIntro) {
-      playOpeningMask();
-    }
-  });
-
   // 새로고침 시 상단으로 이동
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
@@ -210,9 +210,12 @@ $(function () {
   $(window).on('load', function () {
     $('html, body').scrollTop(0);
 
-    // 인트로가 없을 때만 바로 오픈마스크 실행
     if (!hasIntro) {
       playOpeningMask();
+
+      setTimeout(function () {
+        showSection01Text();
+      }, 200);
     }
   });
 
@@ -309,10 +312,15 @@ $(function () {
     autoScrolling: true,
     slideSelector: '.fpSlide',
     responsiveWidth: 1441,
+
     afterRender: function () {
       setTimeout(function () {
         setActiveSection(1);
         firstLoad = false;
+
+        if (!hasIntro) {
+          showSection01Text();
+        }
       }, 120);
     },
 
@@ -321,6 +329,10 @@ $(function () {
 
       setTimeout(function () {
         setActiveSection(index);
+
+        if (index === 1 && !$('body').hasClass('introOpen')) {
+          showSection01Text();
+        }
 
         if (index === 3 && !sec3Open) {
           $('#section03').addClass('step1');
@@ -352,6 +364,10 @@ $(function () {
       if (nextIndex === 1) {
         $('#section01').removeClass('on2');
         sec1Open = false;
+
+        if (!$('body').hasClass('introOpen')) {
+          showSection01Text();
+        }
       }
 
       /* section03 */
@@ -425,7 +441,7 @@ $(function () {
   $('#section01').on('mousewheel DOMMouseScroll', function (e) {
     if (current !== 1 || !sec1Open || busy) return;
 
-    var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    let delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
     if (delta > 0) {
       busy = true;
@@ -444,7 +460,7 @@ $(function () {
   $('#section03').on('mousewheel DOMMouseScroll', function (e) {
     if (current !== 3 || !sec3Open || busy) return;
 
-    var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    let delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
     if (delta > 0) {
       busy = true;
@@ -464,7 +480,7 @@ $(function () {
   $('#section06').on('mousewheel DOMMouseScroll', function (e) {
     if (current !== 6 || !sec6Open || busy) return;
 
-    var delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
+    let delta = e.originalEvent.wheelDelta || -e.originalEvent.detail;
 
     if (delta > 0) {
       busy = true;
