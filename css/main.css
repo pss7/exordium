@@ -9,6 +9,9 @@ section{height: 100vh; overflow: hidden;}
 
 /* 비주얼영역 */
 #section01{position: relative;}
+#section01 .titleBox h3,
+#section01 .mainBorderText,
+#section01 p{opacity: 0; transform: translateY(60px); transition: all 1s;}
 #section01 video{display: block; width: 100%;height: 100%; object-fit: cover;}
 #section01 .titleBox{width: 100%; position: absolute; top:236px; left:0; word-break: keep-all;}
 #section01 .titleBox .box{overflow: hidden;}
@@ -17,37 +20,17 @@ section{height: 100vh; overflow: hidden;}
 #section01 .titleBox h3{font-size: 72px; text-transform: uppercase; line-height: 1.1; letter-spacing: -3px; overflow: hidden;}
 #section01 .titleBox h3 strong{display: block; color: #314965; }
 #section01 .titleBox p{font-size: 18px; color: #444; font-weight: 500; letter-spacing: -1px; overflow: hidden;}
-#section01 .infoTextBox{padding: 140px 20px 0; position: absolute; top:0; left:-100%; bottom: 0; max-width: 800px; width: 100%; text-align: center; background: url(../images/main/bg01.jpg)no-repeat center / cover; z-index: 999; transition: left 2s;}
-#section01.on2 .mainBorderText,
-#section01.on2 .titleBox h3,
-#section01.on2 .titleBox p{opacity: 0; transform: translateY(60px); }
-#section01.on2 .infoTextBox{left: 0;}
-#section01 .mainBorderText,
-#section01 .titleBox h3,
-#section01 .titleBox p{opacity: 0; transform: translateY(60px); transition: all 1s;}
-#section01 .infoTextBox .title{margin-bottom: 50px; font-size: 48px; color: #202020; line-height: 1.2; text-align: center; letter-spacing: -3px;}
-#section01 .infoTextBox .title span{font-weight: 700;}
-#section01 .infoTextBox .title strong{font-size: 60px;}
-#section01 .infoTextBox .text{margin-bottom: 40px; color: #666; font-weight: 500; letter-spacing: -1px;}
-#section01 .infoTextBox .logoBox img{display: block; margin: 0 auto;}
 
 #section01.is-active .mainBorderText,
 #section01.is-active .titleBox h3,
 #section01.is-active .titleBox p {opacity: 1; transform: translateY(0);}
 
-@media (max-width: 1440px){
-
-  #section01 .infoTextBox{padding: 50px 20px; max-width: none; position: static;}
-
-}
 
 @media (max-width: 1199px){
 
   #section01 .fp-tableCell{display: block!important;}
   #section01 .titleBox{top: 50%; transform: translateY(-50%);}
   #section01 .titleBox h3{font-size: 60px;}
-  #section01 .infoTextBox .title strong,
-  #section01 .infoTextBox .title{font-size: 40px;}
 
 }
 
@@ -55,9 +38,6 @@ section{height: 100vh; overflow: hidden;}
 
   #section01 .titleBox h3{font-size: 50px;}
   #section01 .titleBox p{font-size: 16px;}
-
-  #section01 .infoTextBox .title strong,
-  #section01 .infoTextBox .title{font-size: 36px;}
 
 }
 
@@ -68,46 +48,86 @@ section{height: 100vh; overflow: hidden;}
   #section01 .titleBox p br{display: none;}
   #section01 .titleBox{text-align: center;}
 
-  #section01 .infoTextBox .title{margin-bottom: 35px;}
-  #section01 .infoTextBox .title strong,
-  #section01 .infoTextBox .title{font-size: 28px;}
-
 }
 
 /* section02 */
-#section02{ position: relative; overflow: hidden;}
+#section02{position: relative; overflow: hidden;}
+#section02 .layoutBox{display: flex; height: 100%;}
 #section02::after{content: ''; position: absolute; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.3);}
 #section02 .box{overflow: hidden;}
 #section02 video{display: block; width: 100%; height: 100%; object-fit: cover;}
-#section02 .titleBox{width: 100%; position: absolute; top:50%; transform: translateY(-50%); left:0; z-index: 999;}
-#section02 .titleBox .mainBorderText{margin-bottom: 20px; color: #fff; border-color: #fff;}
-#section02 .titleBox .text{font-size: 70px; color: #fff; line-height: 1.1; text-transform: uppercase; font-weight: 700; word-break: keep-all;}
-#section02 .titleBox .text span{font-size: 60px;}
-#section02 .titleBox .mainBorderText,
-#section02 .titleBox .text{opacity: 0; transform: translateY(80px); transition: all 1s;}
+#section02 .infoTextBox{padding: 140px 20px 0; width: 59.4%; text-align: center; background: url(../images/main/bg01.jpg)no-repeat center / cover; z-index: 999; transition: left 2s;}
+#section02 .infoTextBox .title{transition-delay: .3s;}
+#section02 .infoTextBox .text{transition-delay: .4s;}
+#section02 .infoTextBox .logoBox{transition-delay: .5s;}
+#section02 .infoTextBox .title,
+#section02 .infoTextBox .text,
+#section02 .infoTextBox .logoBox{opacity: 0; transform: translateX(-60px); transition: all 1s;}
+#section02 .videoBox .titleBox .mainBorderText,
+#section02 .videoBox .titleBox p{opacity: 0; transform: translateY(60px); transition: all 1s;}
+#section02 .infoTextBox .title{margin-bottom: 50px; font-size: 48px; color: #202020; line-height: 1.2; text-align: center; letter-spacing: -3px;}
+#section02 .infoTextBox .title span{font-weight: 700;}
+#section02 .infoTextBox .title strong{font-size: 60px;}
+#section02 .infoTextBox .text{margin-bottom: 40px; color: #666; font-weight: 500; letter-spacing: -1px;}
+#section02 .infoTextBox .logoBox img{display: block; margin: 0 auto;}
+#section02 .videoBox{position: relative;}
+#section02 .videoBox .titleBox{width: 100%; padding-right: 196px; position: absolute; top:183px; right: 0; z-index: 999; text-align: right;}
+#section02 .videoBox .titleBox .mainBorderText{margin-bottom: 20px; color: #fff; border-color: #fff;}
+#section02 .videoBox .titleBox .text{font-size: 70px; color: #fff; line-height: 1.1; text-transform: uppercase; font-weight: 700; word-break: keep-all;}
+#section02 .videoBox .titleBox .text span{font-size: 60px;}
+#section02 .videoBox .titleBox .mainBorderText,
+#section02 .videoBox .titleBox .text{opacity: 0; transform: translateY(80px); transition: all 1s;}
+#section02.is-active .infoTextBox .title,
+#section02.is-active .infoTextBox .text,
+#section02.is-active .infoTextBox .logoBox{opacity: 1; transform: translateX(0); transition: all 1s;}
+#section02.is-active .videoBox .titleBox .mainBorderText,
+#section02.is-active .videoBox .titleBox .text{opacity: 1; transform: translateY(0);}
 
-#section02.is-active .titleBox .mainBorderText,
-#section02.is-active .titleBox .text{opacity: 1; transform: translateY(0);}
+@media (max-width: 1440px){
 
-@media (max-width: 1199px){
+  #section02 .infoTextBox{max-width: none; position: static;}
+  #section02 .videoBox .titleBox{padding: 0; top: 50%; transform: translateY(-50%); text-align: center;}
+  #section02 .videoBox .titleBox .text{font-size: 60px;}
+  #section02 .infoTextBox .title strong,
+  #section02 .infoTextBox .title{font-size: 40px;}
 
-  #section02 .titleBox .text{font-size: 60px;}
 
 }
 
+@media (max-width: 1199px){
+
+  #section02 .layoutBox{flex-direction: column;}
+  #section02 .infoTextBox{display: flex; flex-direction: column; align-items: center; justify-content: center; padding: 0 20px;  width: 100%;}
+  #section02 .infoTextBox,
+  #section02 .videoBox{height: 100vh;}
+
+  #section02 .infoTextBox .title,
+  #section02 .infoTextBox .text,
+  #section02 .infoTextBox .logoBox{transform: translate(0, 60px);}
+  #section02.is-active .infoTextBox .title,
+  #section02.is-active .infoTextBox .text,
+  #section02.is-active .infoTextBox .logoBox{transform: translate(0, 0);}
+
+}
+
+
 @media (max-width: 767px){
 
-  #section02 .titleBox .text span,
-  #section02 .titleBox .text{font-size: 50px;}
+  #section02 .videoBox .titleBox .text span,
+  #section02 .videoBox .titleBox .text{font-size: 50px;}
+  #section02 .infoTextBox .title strong,
+  #section02 .infoTextBox .title{font-size: 36px;}
 
 }
 
 @media (max-width: 480px){
 
-  #section02 .titleBox{text-align: center;}
-  #section02 .titleBox .text span,
-  #section02 .titleBox .text{font-size: 30px;}
+  #section02 .videoBox .titleBox .text span,
+  #section02 .videoBox .titleBox .text{font-size: 30px;}
 
+  #section02 .infoTextBox .title{margin-bottom: 35px;}
+  #section02 .infoTextBox .title strong,
+  #section02 .infoTextBox .title{font-size: 28px;}
 
 }
 
@@ -351,13 +371,15 @@ section{height: 100vh; overflow: hidden;}
 }
 
 /* section05 */
-#section05 {background: url(../images/main/bg04.jpg) no-repeat center;}
-#section05 .mainTitleBox {height: 100vh; display: flex; align-items: center; flex-direction: column; justify-content: center;}
+#section05 {position: relative;}
+#section05::after{content: ''; position: absolute; top:0; left: 0; right:0; bottom: 0; background-color: rgba(0,0,0,.3);}
+#section05 video{display: block; width: 100%; height: 100%; object-fit: cover;}
+#section05 .mainTitleBox {width: 100%; position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); z-index: 99;}
 #section05 .mainTitleBox .mainText span {color: #e7ca86;}
 #section05 .mainText02 {margin-top: 30px;}
 #section05 .mainTitleBox .mainTopText { color: #fff;}
 .mainTitleBox {text-align: center;}
-.mainTitleBox .mainTopText {margin-bottom: 40px; font-size: 54px; color: #000;
+.mainTitleBox .mainTopText{display: block; margin-bottom: 40px; font-size: 54px; color: #000;
   font-family: 'OoohBaby';}
 .mainTitleBox .mainBorderText{ margin-bottom: 30px; color: #fff; border-color: #fff;}
 .mainTitleBox .mainTitle{margin-bottom: 40px; color: #fff; font-size: 38px;
