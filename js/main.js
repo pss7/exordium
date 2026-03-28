@@ -34,7 +34,7 @@ $(function () {
   });
 
   /* section06 */
-  $('#section06 .slickWrap .slick').slick({
+  $('#section06 .floorGuideBox .slick').slick({
     slide: '.slider',
     autoplay: true,
     arrows: true,
@@ -49,8 +49,27 @@ $(function () {
     pauseOnHover: false,
     autoplaySpeed: 3000,
     speed: 1300,
-    prevArrow: $('#section06 .control .prev'),
-    nextArrow: $('#section06 .control .next'),
+    prevArrow: $('#section06 .floorGuideBox .control .prev'),
+    nextArrow: $('#section06 .floorGuideBox .control .next'),
+  });
+
+    $('#section06 .spaceBox .slick').slick({
+    slide: '.slider',
+    autoplay: true,
+    arrows: true,
+    dots: false,
+    accessibility: false,
+    draggable: true,
+    infinite: true,
+    fade: true,
+    slidesToShow: 1,
+    slidesToScroll: 1,
+    zIndex: 1000,
+    pauseOnHover: false,
+    autoplaySpeed: 3000,
+    speed: 1300,
+    prevArrow: $('#section06 .spaceBox .control .prev'),
+    nextArrow: $('#section06 .spaceBox .control .next'),
   });
 
   /* fullpage */
