@@ -1315,7 +1315,10 @@
     <!-- //wrap -->
 
     <div id="introVideoWrap" class="introVideoWrap">
-        <video id="introVideo" autoplay muted playsinline>
+        <div class="introPoster"></div>
+
+        <video id="introVideo" autoplay muted playsinline webkit-playsinline preload="auto"
+            poster="images/main/intro.jpg">
             <source src="video/intro.mp4" type="video/mp4">
         </video>
 
@@ -1323,17 +1326,15 @@
             <span class="cursorHalo"></span>
 
             <span class="cursorPointer">
-                <span class="cursorPointerText">CLICK</span>
+                <span class="cursorPointerText">Click</span>
             </span>
 
             <span class="skipBadge">
                 <span class="skipText">SKIP</span>
             </span>
-
         </div>
 
         <button type="button" class="introSkip">SKIP</button>
-
     </div>
     <!-- //introVideoWrap -->
 

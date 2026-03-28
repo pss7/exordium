@@ -1,5 +1,4 @@
 $(function () {
-
   let $introVideoWrap = $('#introVideoWrap');
   let $introCursor = $('#introCursor');
   let $introSkip = $('.introSkip');
@@ -53,6 +52,18 @@ $(function () {
     }, 1300);
   }
 
+  function showIntroVideo() {
+    if (!hasIntro || !$introVideoWrap.length) return;
+    $introVideoWrap.addClass('isVideoReady');
+
+    if (introVideo) {
+      let playPromise = introVideo.play();
+      if (playPromise !== undefined) {
+        playPromise.catch(function () { });
+      }
+    }
+  }
+
   function closeIntro() {
     if (isIntroClosed) return;
     isIntroClosed = true;
@@ -101,7 +112,6 @@ $(function () {
     });
 
     $introVideoWrap.on('click.intro', function (e) {
-      // 모바일에서는 래퍼 클릭 무효
       if (isMobileIntro()) return;
 
       if ($(e.target).closest('.introSkip').length) return;
@@ -115,7 +125,6 @@ $(function () {
     $introVideoWrap.on('click.introMobileBlock', function (e) {
       if (!isMobileIntro()) return;
 
-      // skip 버튼만 닫힘 허용
       if ($(e.target).closest('.introSkip').length) {
         e.preventDefault();
         e.stopPropagation();
@@ -123,7 +132,6 @@ $(function () {
         return false;
       }
 
-      // 비디오/배경 클릭 막기
       e.preventDefault();
       e.stopPropagation();
       return false;
@@ -170,6 +178,8 @@ $(function () {
     });
 
     if (introVideo) {
+      introVideo.addEventListener('canplay', showIntroVideo, { once: true });
+
       introVideo.addEventListener('ended', function () {
         closeIntro();
       });
