@@ -21,7 +21,7 @@ body.mobileNoScroll{overflow: hidden;}
 #headerWrap .menu .depth01 li:hover h2 a span::before{width: 100%;}
 #headerWrap .menu .depth01 li h2 a span::before{content: ''; position: absolute; bottom: -2px; left:0; width: 0; height: 2px; background-color: #cf841b; transition: all .3s;}
 #headerWrap .menu .depth02{display: none; position: absolute; top:0; left:0; right:0; /*padding-top: 85px;*/ padding-top: 87px;}
-#headerWrap .menu .depth02 li h3 a{display: block; /*padding: 3px 0;*/ padding: 5px 0; font-size: 15px; color: #222;}
+#headerWrap .menu .depth02 li h3 a{display: block; /*padding: 3px 0;*/ padding: 5px 0; font-size: 15px; color: #222; white-space: nowrap;}
 #headerWrap .menu .depth02 li h3 a:hover{color: #ca7702;}
 #headerWrap .infoBox{display: flex; align-items: center; gap: 0 15px;}
 #headerWrap .infoBox a{display: flex; align-items: center; color: #444;}
@@ -51,8 +51,8 @@ body.mobileNoScroll{overflow: hidden;}
   #headerWrap .infoBox .reg,
   #headerWrap .menu .depth01 li h2 a{font-size: 16px;}
   #headerWrap .infoBox .call{font-size: 18px;}
-  #headerWrap .menu .depth01 li h2 a{padding: 0 26px;}
-  #headerWrap .menu .depth01{gap: 0;}
+  #headerWrap .menu .depth01{display: flex; gap: 0 50px;}
+  #headerWrap .bg{height: 170px;}
 
 }
 

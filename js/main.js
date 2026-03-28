@@ -1,88 +1,116 @@
-
 $(function () {
 
-   var $introVideoWrap = $('#introVideoWrap');
-    var $introCursorSkip = $('#introCursorSkip');
-    var introVideo = document.getElementById('introVideo');
-    var isIntroClosed = false;
+  var $introVideoWrap = $('#introVideoWrap');
+  var $introCursor = $('#introCursor');
+  var introVideo = document.getElementById('introVideo');
+  var isIntroClosed = false;
+  var rafId = null;
 
-    if (!$introVideoWrap.length) return;
+  var hasIntro = $introVideoWrap.length > 0;
 
+  if (hasIntro) {
     $('body').addClass('introOpen');
+  }
 
-    var mouseX = window.innerWidth / 2;
-    var mouseY = window.innerHeight / 2;
-    var currentX = mouseX;
-    var currentY = mouseY;
+  var targetX = window.innerWidth / 2;
+  var targetY = window.innerHeight / 2;
+  var currentX = targetX;
+  var currentY = targetY;
+  var ease = 0.28;
 
-    function animateCursor() {
-        currentX += (mouseX - currentX) * 0.16;
-        currentY += (mouseY - currentY) * 0.16;
+  function renderCursor() {
+    currentX += (targetX - currentX) * ease;
+    currentY += (targetY - currentY) * ease;
 
-        $introCursorSkip.css({
-            left: currentX + 'px',
-            top: currentY + 'px'
-        });
+    $introCursor.css(
+      'transform',
+      'translate3d(' + currentX + 'px, ' + currentY + 'px, 0)'
+    );
 
-        requestAnimationFrame(animateCursor);
+    rafId = requestAnimationFrame(renderCursor);
+  }
+
+  function playOpeningMask() {
+    var $mask = $('.openingMask');
+
+    if (!$mask.length) return;
+
+    $mask.addClass('active');
+
+    setTimeout(function () {
+      $mask.remove();
+    }, 1300);
+  }
+
+  function closeIntro() {
+    if (isIntroClosed) return;
+    isIntroClosed = true;
+
+    $('body').removeClass('introOpen');
+    $introCursor.addClass('isPressed');
+    $introVideoWrap.addClass('isHide');
+
+    if (introVideo) {
+      introVideo.pause();
     }
 
-    animateCursor();
+    setTimeout(function () {
+      if (rafId) cancelAnimationFrame(rafId);
+      $introVideoWrap.remove();
 
-    function closeIntro() {
-        if (isIntroClosed) return;
-        isIntroClosed = true;
+      // 인트로가 완전히 사라진 후 오픈마스크 실행
+      playOpeningMask();
+    }, 400);
+  }
 
-        $('body').removeClass('introOpen');
-
-        if (introVideo) {
-            introVideo.pause();
-        }
-
-        $introVideoWrap.addClass('isHide');
-
-        setTimeout(function () {
-            $introVideoWrap.remove();
-        }, 450);
-    }
+  if (hasIntro) {
+    renderCursor();
 
     $introVideoWrap.on('mousemove', function (e) {
-        mouseX = e.clientX;
-        mouseY = e.clientY;
-        $introVideoWrap.addClass('isActive');
+      targetX = e.clientX;
+      targetY = e.clientY;
+      $introVideoWrap.addClass('isActive');
     });
 
     $introVideoWrap.on('mouseenter', function () {
-        $introVideoWrap.addClass('isActive');
+      $introVideoWrap.addClass('isActive');
+    });
+
+    $introVideoWrap.on('mousedown', function () {
+      $introCursor.addClass('isPressed');
+    });
+
+    $introVideoWrap.on('mouseup mouseleave', function () {
+      $introCursor.removeClass('isPressed');
     });
 
     $introVideoWrap.on('click', function () {
-        closeIntro();
+      closeIntro();
     });
 
     $introVideoWrap.on('touchstart', function () {
-        closeIntro();
+      closeIntro();
     });
 
     if (introVideo) {
-        introVideo.addEventListener('ended', function () {
-            closeIntro();
-        });
+      introVideo.addEventListener('ended', function () {
+        closeIntro();
+      });
     }
+  }
 
-
-
-  // 새로고침 시 상단으로 이동, 로드 시 배경 레이어
+  // 새로고침 시 상단으로 이동
   if ('scrollRestoration' in history) {
     history.scrollRestoration = 'manual';
   }
 
   $(window).on('load', function () {
     $('html, body').scrollTop(0);
-    $('.openingMask').addClass('active');
-    setTimeout(function () {
-      $('.openingMask').remove();
-    }, 1300);
+
+    // 인트로가 없을 때만 바로 오픈마스크 실행
+    if (!hasIntro) {
+      playOpeningMask();
+    }
   });
 
   /* section04 */
