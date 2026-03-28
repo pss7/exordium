@@ -1,22 +1,27 @@
 $(function () {
 
-  var $introVideoWrap = $('#introVideoWrap');
-  var $introCursor = $('#introCursor');
-  var introVideo = document.getElementById('introVideo');
-  var isIntroClosed = false;
-  var rafId = null;
+  let $introVideoWrap = $('#introVideoWrap');
+  let $introCursor = $('#introCursor');
+  let $introSkip = $('.introSkip');
+  let introVideo = document.getElementById('introVideo');
+  let isIntroClosed = false;
+  let rafId = null;
 
-  var hasIntro = $introVideoWrap.length > 0;
+  let hasIntro = $introVideoWrap.length > 0;
 
   if (hasIntro) {
     $('body').addClass('introOpen');
   }
 
-  var targetX = window.innerWidth / 2;
-  var targetY = window.innerHeight / 2;
-  var currentX = targetX;
-  var currentY = targetY;
-  var ease = 0.28;
+  let targetX = window.innerWidth / 2;
+  let targetY = window.innerHeight / 2;
+  let currentX = targetX;
+  let currentY = targetY;
+  let ease = 0.28;
+
+  function isMobileIntro() {
+    return window.innerWidth <= 1199;
+  }
 
   function renderCursor() {
     currentX += (targetX - currentX) * ease;
@@ -30,9 +35,15 @@ $(function () {
     rafId = requestAnimationFrame(renderCursor);
   }
 
-  function playOpeningMask() {
-    var $mask = $('.openingMask');
+  function stopCursor() {
+    if (rafId) {
+      cancelAnimationFrame(rafId);
+      rafId = null;
+    }
+  }
 
+  function playOpeningMask() {
+    let $mask = $('.openingMask');
     if (!$mask.length) return;
 
     $mask.addClass('active');
@@ -55,40 +66,106 @@ $(function () {
     }
 
     setTimeout(function () {
-      if (rafId) cancelAnimationFrame(rafId);
+      stopCursor();
       $introVideoWrap.remove();
-
-      // 인트로가 완전히 사라진 후 오픈마스크 실행
       playOpeningMask();
     }, 400);
   }
 
-  if (hasIntro) {
+  function bindDesktopIntro() {
+    if (!hasIntro) return;
+
+    targetX = window.innerWidth / 2;
+    targetY = window.innerHeight / 2;
+    currentX = targetX;
+    currentY = targetY;
+
     renderCursor();
 
-    $introVideoWrap.on('mousemove', function (e) {
+    $introVideoWrap.on('mousemove.intro', function (e) {
       targetX = e.clientX;
       targetY = e.clientY;
       $introVideoWrap.addClass('isActive');
     });
 
-    $introVideoWrap.on('mouseenter', function () {
+    $introVideoWrap.on('mouseenter.intro', function () {
       $introVideoWrap.addClass('isActive');
     });
 
-    $introVideoWrap.on('mousedown', function () {
+    $introVideoWrap.on('mousedown.intro', function () {
       $introCursor.addClass('isPressed');
     });
 
-    $introVideoWrap.on('mouseup mouseleave', function () {
+    $introVideoWrap.on('mouseup.intro mouseleave.intro', function () {
       $introCursor.removeClass('isPressed');
     });
 
-    $introVideoWrap.on('click', function () {
+    $introVideoWrap.on('click.intro', function (e) {
+      // 모바일에서는 래퍼 클릭 무효
+      if (isMobileIntro()) return;
+
+      if ($(e.target).closest('.introSkip').length) return;
       closeIntro();
     });
+  }
 
-    $introVideoWrap.on('touchstart', function () {
+  function bindMobileIntro() {
+    if (!hasIntro) return;
+
+    $introVideoWrap.on('click.introMobileBlock', function (e) {
+      if (!isMobileIntro()) return;
+
+      // skip 버튼만 닫힘 허용
+      if ($(e.target).closest('.introSkip').length) {
+        e.preventDefault();
+        e.stopPropagation();
+        closeIntro();
+        return false;
+      }
+
+      // 비디오/배경 클릭 막기
+      e.preventDefault();
+      e.stopPropagation();
+      return false;
+    });
+
+    $introVideoWrap.on('touchstart.introMobileBlock', function (e) {
+      if (!isMobileIntro()) return;
+
+      if ($(e.target).closest('.introSkip').length) return;
+
+      e.stopPropagation();
+    });
+  }
+
+  function unbindIntroEvents() {
+    if (!hasIntro) return;
+
+    stopCursor();
+    $introVideoWrap.off('.intro');
+    $introVideoWrap.off('.introMobileBlock');
+    $introVideoWrap.removeClass('isActive');
+    $introCursor.removeClass('isPressed');
+  }
+
+  function setupIntroMode() {
+    if (!hasIntro || isIntroClosed) return;
+
+    unbindIntroEvents();
+
+    if (isMobileIntro()) {
+      bindMobileIntro();
+    } else {
+      bindDesktopIntro();
+    }
+  }
+
+  if (hasIntro) {
+    setupIntroMode();
+
+    $introSkip.on('click', function (e) {
+      e.preventDefault();
+      e.stopPropagation();
       closeIntro();
     });
 
@@ -97,7 +174,23 @@ $(function () {
         closeIntro();
       });
     }
+
+    $(window).on('resize', function () {
+      setupIntroMode();
+    });
   }
+
+  if ('scrollRestoration' in history) {
+    history.scrollRestoration = 'manual';
+  }
+
+  $(window).on('load', function () {
+    $('html, body').scrollTop(0);
+
+    if (!hasIntro) {
+      playOpeningMask();
+    }
+  });
 
   // 새로고침 시 상단으로 이동
   if ('scrollRestoration' in history) {
