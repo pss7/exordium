@@ -1,6 +1,15 @@
 
 $(function () {
 
+  //스크롤
+  $(window).scroll(function () {
+    if ($(this).scrollTop() > 50) {
+      $('#headerWrap').addClass('scroll');
+    } else {
+      $('#headerWrap').removeClass('scroll');
+    }
+  });
+
   //로드
   $(window).load(function () {
     $('.subTopTitleBox').addClass('active');

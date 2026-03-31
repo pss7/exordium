@@ -41,25 +41,6 @@ $(function () {
     $('#headerWrap .bg').stop().slideUp();
   });
 
-  $(window).scroll(function () {
-    if ($(this).scrollTop() > 50) {
-      $('#headerWrap').addClass('scroll');
-    } else {
-      $('#headerWrap').removeClass('scroll');
-    }
-  });
-
-
-
-
-
-
-
-
-
-
-
-
   //비주얼영역 
   $(window).load(function () {
     $('#visualWrap .visualBox').addClass('active');

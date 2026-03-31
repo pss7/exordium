@@ -62,7 +62,7 @@ $(function () {
       let playPromise = introVideo.play();
 
       if (playPromise !== undefined) {
-        playPromise.catch(function () {});
+        playPromise.catch(function () { });
       }
     }
   }
@@ -309,13 +309,14 @@ $(function () {
     scrollingSpeed: 1300,
     navigation: false,
     fitToSection: true,
-    autoScrolling: false,
+    autoScrolling: true,
     slideSelector: '.fpSlide',
     responsiveWidth: 1441,
 
     afterRender: function () {
       setTimeout(function () {
         setActiveSection(1);
+        $('#headerWrap').removeClass('scroll');
         firstLoad = false;
 
         if (!hasIntro) {
@@ -328,7 +329,15 @@ $(function () {
       current = index;
 
       setTimeout(function () {
+        let currentSectionId = getSectionByIndex(index).attr('id');
+
         setActiveSection(index);
+
+        if (currentSectionId === 'section05' || currentSectionId === 'section08') {
+          $('#headerWrap').addClass('scroll');
+        } else {
+          $('#headerWrap').removeClass('scroll');
+        }
 
         if (index === 1 && !$('body').hasClass('introOpen')) {
           showSection01Text();
@@ -346,29 +355,6 @@ $(function () {
 
     onLeave: function (index, nextIndex, direction) {
       if (busy) return false;
-
-      /* section01 */
-      if (index === 1 && direction === 'down' && !sec1Open) {
-        busy = true;
-        $('#section01').addClass('on2');
-        sec1Open = true;
-        setActiveSection(1);
-
-        setTimeout(function () {
-          busy = false;
-        }, 800);
-
-        return false;
-      }
-
-      if (nextIndex === 1) {
-        $('#section01').removeClass('on2');
-        sec1Open = false;
-
-        if (!$('body').hasClass('introOpen')) {
-          showSection01Text();
-        }
-      }
 
       /* section03 */
       if (index === 3 && direction === 'down' && !sec3Open) {
