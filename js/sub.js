@@ -4,6 +4,9 @@ $(function () {
   //로드
   $(window).load(function () {
     $('.subTopTitleBox').addClass('active');
+    AOS.init({
+      duration: 2000
+    });
   });
 
   //썸네일 슬라이드

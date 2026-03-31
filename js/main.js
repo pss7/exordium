@@ -306,10 +306,10 @@ $(function () {
   }
 
   $('#fullpage').fullpage({
-    scrollingSpeed: 2000,
+    scrollingSpeed: 1300,
     navigation: false,
     fitToSection: true,
-    autoScrolling: true,
+    autoScrolling: false,
     slideSelector: '.fpSlide',
     responsiveWidth: 1441,
 
